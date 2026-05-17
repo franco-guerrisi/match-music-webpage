@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fff8f6",
+                    "primary": "#a33900",
+                    "on-tertiary-fixed": "#191c1d",
+                    "secondary-fixed": "#d9e3f6",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "on-tertiary-container": "#fcfdfe",
+                    "outline": "#8e7166",
+                    "inverse-primary": "#ffb599",
+                    "surface-tint": "#a73a00",
+                    "outline-variant": "#e2bfb2",
+                    "primary-fixed-dim": "#ffb599",
+                    "background": "#fff8f6",
+                    "surface-dim": "#efd4cb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#ffede7",
+                    "surface-variant": "#f8ddd4",
+                    "on-secondary-container": "#596373",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#3d2d27",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e1e3e4",
+                    "primary-fixed": "#ffdbce",
+                    "surface-container": "#ffe9e2",
+                    "on-primary-fixed": "#370e00",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#555f6f",
+                    "primary-container": "#cc4900",
+                    "tertiary-container": "#737576",
+                    "on-secondary-fixed-variant": "#3d4756",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#d6e0f3",
+                    "surface-container-low": "#fff1ec",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#fee2d9",
+                    "surface-container-highest": "#f8ddd4",
+                    "secondary-fixed-dim": "#bdc7d9",
+                    "on-background": "#261813",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#5a4138",
+                    "on-primary-container": "#fffbff",
+                    "on-surface": "#261813",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "tertiary": "#5a5c5d",
+                    "on-secondary-fixed": "#121c2a",
+                    "surface-bright": "#fff8f6",
+                    "tertiary-fixed-dim": "#c5c7c8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Gigly</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Features</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Community</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Events</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="active:scale-95 transform transition-transform px-md py-xs bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all">Download</button>
+<button class="md:hidden p-xs">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-xl pb-xl">
+<!-- Hero Section -->
+<header class="relative h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden mb-lg">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A professional, wide-angle interior shot of a sophisticated music studio with high-end equipment and acoustic paneling. The lighting is warm and cinematic, featuring a color palette of deep oranges and soft whites that reflects the Gigly brand identity. The atmosphere is quiet, focused, and secure, suggesting professional integrity and technical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAppTNrQ5-6X_SXEjLxLBOmRrHG3wnedOnpdO4wcJEDBrZLj5l-9NT_Xl0mwb7bksyYTcOgU_UuLFUSawLdmOQj7ZVNryOguRL2i-XXBZhNTmpuf_C8BMZcg4P6dU8IPKzYfWi-GGIcwjiNTgMgjiu0CCNdAgD_pKeh4iE8_V_YCf4tcEXzxQgwbfNIk_fMjNKdENuUxpAZ_nEJ75WdE0dw49nwXghGvlgtfjazAHl2c9MbRyZLd07-3Dvl7W2Xavm0JkTeR0R7ZoA"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-xs drop-shadow-lg">Privacy Policy</h1>
+<p class="font-body-md text-body-md text-white/90 max-w-2xl mx-auto">Last Updated: October 24, 2024. Your trust is the tempo of our platform.</p>
+</div>
+</header>
+<!-- Content Shell -->
+<section class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-md md:p-lg border border-outline-variant">
+<!-- Introduction -->
+<div class="mb-lg">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md">
+                        At Gigly, we believe that transparency is essential to building a vibrant professional music community. This Privacy Policy describes how we handle the information you provide when using our platform to connect, network, and grow your career.
+                    </p>
+</div>
+<div class="grid gap-lg">
+<!-- Data Collection -->
+<section>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-lg">database</span>
+<h2 class="font-headline-md text-headline-md text-primary">Data Collection</h2>
+</div>
+<div class="space-y-sm">
+<p class="text-on-surface-variant">We collect information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products, or when you participate in activities on the Services.</p>
+<ul class="list-none space-y-xs ml-base">
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+<span><strong>Personal Information:</strong> Name, email address, phone number, and location data.</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+<span><strong>Professional Details:</strong> Instrument types, genres, past event history, and portfolio links.</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+<span><strong>Technical Data:</strong> IP address, device type, and usage patterns through cookies.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- How We Use Information -->
+<section class="bg-surface-container-low p-md rounded-lg border-l-4 border-primary">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary">insights</span>
+<h2 class="font-headline-md text-headline-md text-primary">How We Use Information</h2>
+</div>
+<p class="text-on-surface-variant mb-sm">Your data powers the rhythm of your networking experience. We process your information for purposes based on legitimate business interests, the fulfillment of our contract with you, and compliance with our legal obligations.</p>
+<div class="grid md:grid-cols-2 gap-sm">
+<div class="bg-white p-sm rounded border border-outline-variant">
+<span class="font-label-md text-label-md text-primary block mb-xs">Matching Engine</span>
+<p class="text-caption">Using your professional profile to suggest relevant gig opportunities and networking partners.</p>
+</div>
+<div class="bg-white p-sm rounded border border-outline-variant">
+<span class="font-label-md text-label-md text-primary block mb-xs">Platform Integrity</span>
+<p class="text-caption">To keep our community safe, verified, and free from fraudulent event listings.</p>
+</div>
+</div>
+</section>
+<!-- Data Security -->
+<section>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-lg">shield_lock</span>
+<h2 class="font-headline-md text-headline-md text-primary">Data Security</h2>
+</div>
+<p class="text-on-surface-variant mb-md">We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. This includes end-to-end encryption for private communications and secure cloud storage infrastructure.</p>
+<div class="flex flex-wrap gap-sm">
+<span class="px-md py-xs bg-secondary-container text-on-secondary-fixed-variant rounded-full text-label-md font-label-md">256-bit AES Encryption</span>
+<span class="px-md py-xs bg-secondary-container text-on-secondary-fixed-variant rounded-full text-label-md font-label-md">SOC2 Compliant</span>
+<span class="px-md py-xs bg-secondary-container text-on-secondary-fixed-variant rounded-full text-label-md font-label-md">Regular Audits</span>
+</div>
+</section>
+<!-- User Rights -->
+<section>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary p-xs bg-primary-fixed rounded-lg">person_edit</span>
+<h2 class="font-headline-md text-headline-md text-primary">User Rights</h2>
+</div>
+<p class="text-on-surface-variant mb-sm">In some regions (like the EEA and UK), you have certain rights under applicable data protection laws. These may include the right:</p>
+<div class="grid gap-sm">
+<div class="flex items-center gap-md p-sm hover:bg-surface-container transition-colors rounded-lg">
+<span class="material-symbols-outlined text-secondary">visibility</span>
+<div>
+<h4 class="font-label-md text-label-md">Right of Access</h4>
+<p class="text-caption">Request a copy of the personal information we hold about you.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container transition-colors rounded-lg">
+<span class="material-symbols-outlined text-secondary">delete_forever</span>
+<div>
+<h4 class="font-label-md text-label-md">Right to Erasure</h4>
+<p class="text-caption">Request that we delete your personal information from our systems.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container transition-colors rounded-lg">
+<span class="material-symbols-outlined text-secondary">file_download</span>
+<div>
+<h4 class="font-label-md text-label-md">Data Portability</h4>
+<p class="text-caption">Receive your data in a structured, commonly used format.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Us -->
+<section class="mt-md pt-md border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                            If you have questions or comments about this policy, you may email us at <a class="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all" href="mailto:privacy@gigly.com">privacy@gigly.com</a> or contact our Data Protection Officer.
+                        </p>
+</section>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg mt-xl bg-surface-container-highest dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start gap-gutter px-margin-desktop max-w-7xl mx-auto">
+<div class="space-y-sm">
+<div class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Gigly</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Building the professional backbone for the world's most talented performers.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-lg lg:gap-xl">
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Navigation</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Features</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Community</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Events</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Legal</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-primary font-semibold" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-2 underline-offset-4 transition-all" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="lg:text-right">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant mb-md">
+                    © 2024 Gigly Inc. All rights reserved. Built for the rhythm of the industry.
+                </p>
+<div class="flex lg:justify-end gap-sm">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">alternate_email</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

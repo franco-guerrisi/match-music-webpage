@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fff8f6",
+                    "primary": "#a33900",
+                    "on-tertiary-fixed": "#191c1d",
+                    "secondary-fixed": "#d9e3f6",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "on-tertiary-container": "#fcfdfe",
+                    "outline": "#8e7166",
+                    "inverse-primary": "#ffb599",
+                    "surface-tint": "#a73a00",
+                    "outline-variant": "#e2bfb2",
+                    "primary-fixed-dim": "#ffb599",
+                    "background": "#fff8f6",
+                    "surface-dim": "#efd4cb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#ffede7",
+                    "surface-variant": "#f8ddd4",
+                    "on-secondary-container": "#596373",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#3d2d27",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e1e3e4",
+                    "primary-fixed": "#ffdbce",
+                    "surface-container": "#ffe9e2",
+                    "on-primary-fixed": "#370e00",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#555f6f",
+                    "primary-container": "#cc4900",
+                    "tertiary-container": "#737576",
+                    "on-secondary-fixed-variant": "#3d4756",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#d6e0f3",
+                    "surface-container-low": "#fff1ec",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#fee2d9",
+                    "surface-container-highest": "#f8ddd4",
+                    "secondary-fixed-dim": "#bdc7d9",
+                    "on-background": "#261813",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#5a4138",
+                    "on-primary-container": "#fffbff",
+                    "on-surface": "#261813",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "tertiary": "#5a5c5d",
+                    "on-secondary-fixed": "#121c2a",
+                    "surface-bright": "#fff8f6",
+                    "tertiary-fixed-dim": "#c5c7c8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+            scroll-behavior: smooth;
+        }
+        .legal-gradient {
+            background: linear-gradient(180deg, rgba(255,248,246,1) 0%, rgba(255,233,226,0.5) 100%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Gigly</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Features</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Community</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Events</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="px-md py-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md active:scale-95 transform transition-transform hover:shadow-lg">
+                    Download
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-xl pb-xl">
+<!-- Hero Section -->
+<section class="legal-gradient pt-xl pb-lg px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center mt-xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-md">Terms of Service</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+                    Please read these terms carefully before using our platform. Your use of Gigly signifies your agreement to these conditions.
+                </p>
+<div class="mt-md text-caption text-outline">Last Updated: October 24, 2023</div>
+</div>
+</section>
+<!-- Content Section -->
+<section class="px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:block w-64 flex-shrink-0">
+<div class="sticky top-24 p-md bg-surface-container-low rounded-xl">
+<h4 class="font-label-md text-label-md text-primary mb-sm">TABLE OF CONTENTS</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#acceptance">1. Acceptance of Terms</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#conduct">2. User Conduct</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#property">3. Intellectual Property</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#liability">4. Limitation of Liability</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#termination">5. Termination</a></li>
+</ul>
+</div>
+</aside>
+<!-- Terms Content -->
+<div class="flex-grow space-y-lg">
+<!-- Section 1 -->
+<div class="p-md md:p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 scroll-mt-24" id="acceptance">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">1. Acceptance of Terms</h2>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-md">
+<p>
+                                By accessing or using the Gigly platform, websites, or services (collectively, the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to all of the terms and conditions, you may not use the Service.
+                            </p>
+<p>
+                                Gigly reserves the right to modify or replace these Terms at any time. We will provide notice of significant changes by posting the new Terms on the Service and updating the "Last Updated" date. Your continued use of the Service after such changes constitutes your acceptance of the new Terms.
+                            </p>
+</div>
+</div>
+<!-- Section 2 -->
+<div class="p-md md:p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 scroll-mt-24" id="conduct">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">2. User Conduct</h2>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-md">
+<p>
+                                You agree to use the Service only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the Service. Prohibited behavior includes:
+                            </p>
+<ul class="list-disc pl-md space-y-sm">
+<li>Harassing or causing distress or inconvenience to any individual.</li>
+<li>Transmitting obscene or offensive content.</li>
+<li>Disrupting the normal flow of dialogue within the Service.</li>
+<li>Impersonating any person or entity, including Gigly employees.</li>
+<li>Using automated systems (bots, spiders) to access the service without permission.</li>
+</ul>
+</div>
+</div>
+<!-- Visual Break - Graphic Card -->
+<div class="relative overflow-hidden rounded-xl h-64 flex items-center p-lg">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A professional live music concert venue with vibrant orange stage lighting and atmospheric haze. The scene captures the energy of a professional industry event with high-end audio equipment in the foreground, perfectly reflecting the Gigly brand's blend of professional precision and musical energy. The lighting creates a high-contrast, energetic mood consistent with the brand's primary orange palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiVpILr7SKWABcRBR_LUDGtDktcr88wr40cif2lgx1pp3-tP87PpFu26X4SknxUjAmXm9aZAu6CRqeCHcJqtpLPTMrmJWTJEyEues6CYxFohZSYk3yWQFKnF3Z3AmlxJSbd7R6C1sv-gx3f8DakZLE6mv1D8RH6_qkCQYbxmq0vPwtB5x_IQ8DpuBh4u7aRw0mDzSgWrFcvb8iJ1bY9xQb1yj2b6-RUgXRB690vLAQs0v39Kd7apnb_jQwjTdPFAP8QqycjE5-j_cP"/>
+<div class="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
+<div class="relative z-10 text-on-primary">
+<h3 class="font-headline-lg text-headline-lg mb-xs">Professional Excellence</h3>
+<p class="font-body-md text-body-md max-w-md">Built for the rhythm of the industry. We protect our community to ensure every gig is a success.</p>
+</div>
+</div>
+<!-- Section 3 -->
+<div class="p-md md:p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 scroll-mt-24" id="property">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="copyright">copyright</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">3. Intellectual Property</h2>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-md">
+<p>
+                                The Service and its original content, features, and functionality are and will remain the exclusive property of Gigly Inc. and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.
+                            </p>
+<p>
+                                Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Gigly. Any content uploaded by users ("User Content") remains the property of the user, however, by uploading to Gigly, you grant us a worldwide, non-exclusive license to use, reproduce, and display such content.
+                            </p>
+</div>
+</div>
+<!-- Section 4 -->
+<div class="p-md md:p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 scroll-mt-24" id="liability">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="warning">warning</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">4. Limitation of Liability</h2>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-md">
+<p>
+                                In no event shall Gigly Inc., nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:
+                            </p>
+<ul class="list-disc pl-md space-y-sm">
+<li>Your access to or use of or inability to access or use the Service.</li>
+<li>Any conduct or content of any third party on the Service.</li>
+<li>Any content obtained from the Service.</li>
+<li>Unauthorized access, use or alteration of your transmissions or content.</li>
+</ul>
+</div>
+</div>
+<!-- Section 5 -->
+<div class="p-md md:p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 scroll-mt-24" id="termination">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="cancel">cancel</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">5. Termination</h2>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-md">
+<p>
+                                We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+                            </p>
+<p>
+                                All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+                            </p>
+</div>
+</div>
+<!-- Contact/Support CTA -->
+<div class="p-lg bg-primary-fixed text-on-primary-fixed-variant rounded-xl text-center">
+<h3 class="font-headline-md text-headline-md mb-sm">Questions about our Terms?</h3>
+<p class="font-body-md text-body-md mb-md">Our legal team is here to help you understand your rights and responsibilities.</p>
+<button class="px-lg py-sm bg-primary text-on-primary rounded-full font-label-md hover:shadow-lg transition-all active:scale-95">Contact Legal Support</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg mt-xl bg-surface-container-highest dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start gap-gutter px-margin-desktop max-w-7xl mx-auto">
+<div class="space-y-md">
+<div class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Gigly</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Empowering the live music industry with modern networking and event management tools.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-xl">
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-primary">Company</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Careers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Press</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-primary">Legal</span>
+<a class="font-body-md text-body-md text-primary font-semibold underline decoration-2 underline-offset-4" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-label-md text-primary">Contact</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="mailto:support@gigly.inc">support@gigly.inc</a>
+<div class="flex gap-sm mt-xs">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">public</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">campaign</span>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-7xl mx-auto mt-lg pt-md border-t border-outline-variant/30 text-center lg:text-left">
+<p class="font-caption text-caption text-on-surface-variant/70">
+                © 2024 Gigly Inc. All rights reserved. Built for the rhythm of the industry.
+            </p>
+</div>
+</footer>
+</body></html>
