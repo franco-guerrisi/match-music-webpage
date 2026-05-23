@@ -3,23 +3,23 @@
 */
 
 :root {
-    /* Brand Colors */
-    --primary: #EA580C;
-    --primary-light: #FB923C;
-    --primary-dark: #C2410C;
+  /* Brand Colors */
+  --primary: #ea580c;
+  --primary-light: #fb923c;
+  --primary-dark: #c2410c;
 
-    /* Dark Theme Colors */
-    --bg-color: #0f0a08;
-    --surface: rgba(30, 20, 15, 0.6);
-    --surface-light: rgba(45, 30, 22, 0.8);
-    --text-primary: #ffffff;
-    --text-secondary: #a39b98;
+  /* Dark Theme Colors */
+  --bg-color: #0f0a08;
+  --surface: rgba(30, 20, 15, 0.6);
+  --surface-light: rgba(45, 30, 22, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #a39b98;
 
-    /* Utilities */
-    --glass-border: rgba(234, 88, 12, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    --blur: blur(16px);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Utilities */
+  --glass-border: rgba(234, 88, 12, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --blur: blur(16px);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 * {
@@ -45,7 +45,7 @@ h2,
 h3,
 h4,
 .logo {
-    font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 /* Glassmorphism Utility */
@@ -166,61 +166,68 @@ h4,
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   position: relative;
-  padding: 120px 24px 60px;
+  padding: 100px 24px 80px;
   overflow: hidden;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-background {
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(234, 88, 12, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(60px);
-    z-index: -1;
-}
-
-.hero-background::before {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -50%;
-    width: 80%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(234, 88, 12, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(40px);
-}
-
-.hero>div {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-/* Center hero content for better UX */
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 8px 4px;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
 }
+
+.hero-background {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(234, 88, 12, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.hero-background::before {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(234, 88, 12, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(40px);
+}
+
+.hero > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(300px, 1fr);
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Center hero content for better UX */
+/* Duplicate hero content rule removed; main styling is defined above. */
 
 .badge {
   display: inline-block;
@@ -262,17 +269,19 @@ h4,
 }
 
 .mockup-container {
-    width: 300px;
-    height: 600px;
-    background: #000;
-    border-radius: 40px;
-    padding: 12px;
-    border: 2px solid #333;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 2;
-    transform: rotate(5deg);
-    transition: transform 0.5s ease;
+  width: 300px;
+  height: 600px;
+  background: #000;
+  border-radius: 40px;
+  padding: 12px;
+  border: 2px solid #333;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+  transform: rotate(5deg);
+  transition: transform 0.5s ease;
 }
 
 .mockup-container:hover {
@@ -387,15 +396,14 @@ h4,
 }
 
 @keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* Sections General */
@@ -428,10 +436,14 @@ h4,
 }
 
 .mission-section .section-content {
-    background: linear-gradient(to right, rgba(30, 20, 15, 0.8), rgba(45, 30, 22, 0.4));
-    padding: 60px;
-    border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    to right,
+    rgba(30, 20, 15, 0.8),
+    rgba(45, 30, 22, 0.4)
+  );
+  padding: 60px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Features Grid */
@@ -530,11 +542,15 @@ h4,
 
 /* CTA Section */
 .cta-container {
-    padding: 80px 40px;
-    border-radius: 40px;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(0, 0, 0, 0.5));
-    border: 1px solid rgba(234, 88, 12, 0.3);
+  padding: 80px 40px;
+  border-radius: 40px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(234, 88, 12, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  border: 1px solid rgba(234, 88, 12, 0.3);
 }
 
 .cta-container h2 {
@@ -551,18 +567,18 @@ h4,
 
 /* Footer */
 .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 40px 24px 20px;
-    background: rgba(10, 5, 3, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 24px 20px;
+  background: rgba(10, 5, 3, 0.8);
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 30px;
-    margin-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .footer-brand p {
@@ -572,9 +588,9 @@ h4,
 }
 
 .footer-links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
 }
 
 .link-group h4 {
@@ -595,13 +611,13 @@ h4,
 }
 
 .footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 /* Animations (Intersection Observer used in JS) */
@@ -619,70 +635,69 @@ h4,
 }
 
 .delay-1 {
-    transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 .delay-2 {
-    transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .delay-3 {
-    transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-    .hero>div {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+  .hero > div {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-    .hero-subtitle {
-        margin: 0 auto 40px;
-    }
+  .hero-subtitle {
+    margin: 0 auto 40px;
+  }
 
-    .hero-buttons {
-        justify-content: center;
-    }
+  .hero-buttons {
+    justify-content: center;
+  }
 
-    .hero-visual {
-        margin-top: 60px;
-    }
+  .hero-visual {
+    margin-top: 60px;
+  }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-    .footer-links {
-        justify-content: flex-start;
-    }
+  .footer-links {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
 
-    .nav-links,
-    .nav-actions {
-        display: none;
-    }
+  .menu-btn {
+    display: block;
+  }
 
-    .menu-btn {
-        display: block;
-    }
+  .hero-title {
+    font-size: 2.5rem;
+  }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
+  .section-title {
+    font-size: 2rem;
+  }
 
-    .section-title {
-        font-size: 2rem;
-    }
+  .mission-section .section-content {
+    padding: 40px 20px;
+  }
 
-    .mission-section .section-content {
-        padding: 40px 20px;
-    }
-
-    .cta-container h2 {
-        font-size: 2rem;
-    }
+  .cta-container h2 {
+    font-size: 2rem;
+  }
 }
