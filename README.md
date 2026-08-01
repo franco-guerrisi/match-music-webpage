@@ -1,6 +1,6 @@
-# Gigly (Match Music Webpage)
+# Gigly (Gigly Webpage)
 
-This repository contains the source code for the Gigly webpage, the companion website for the Match Music Mobile application. 
+This repository contains the source code for the Gigly webpage, the companion website for the Gigly Mobile application. 
 Gigly is the ultimate platform for band management and musical discovery, featuring integration with Spotify, Apple Music, and YouTube.
 
 ## Features
