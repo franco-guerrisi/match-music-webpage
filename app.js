@@ -371,8 +371,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial render
+  // Initial render of showcase if on main page
   if (subscreenSelector) {
     renderSubscreens('bands');
   }
+
+  // ======================================================
+  // PRICING TOGGLE & FAQ ACCORDION LOGIC
+  // ======================================================
+  const btnMonthly = document.getElementById('billing-monthly');
+  const btnAnnual = document.getElementById('billing-annual');
+  const proPrice = document.getElementById('pro-price-display');
+  const proPeriod = document.getElementById('pro-period-display');
+
+  if (btnMonthly && btnAnnual) {
+    btnMonthly.addEventListener('click', () => {
+      btnMonthly.classList.add('active');
+      btnAnnual.classList.remove('active');
+      if (proPrice) proPrice.textContent = '4,99 €';
+      if (proPeriod) proPeriod.textContent = '/ mes · Facturación mensual sin compromiso';
+    });
+
+    btnAnnual.addEventListener('click', () => {
+      btnAnnual.classList.add('active');
+      btnMonthly.classList.remove('active');
+      if (proPrice) proPrice.textContent = '39,99 €';
+      if (proPeriod) proPeriod.textContent = 'al año (Equivale a 3,33 €/mes · ¡Ahorrás 19,89 €!)';
+    });
+  }
+
+  // FAQ Accordions
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item, index) => {
+    const question = item.querySelector('.faq-question');
+    const icon = item.querySelector('.material-symbols-rounded');
+
+    // Open the first item by default
+    if (index === 0) {
+      item.classList.add('active');
+      if (icon) icon.textContent = 'expand_less';
+    }
+
+    if (question) {
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all
+        faqItems.forEach((f) => {
+          f.classList.remove('active');
+          const fIcon = f.querySelector('.material-symbols-rounded');
+          if (fIcon) fIcon.textContent = 'expand_more';
+        });
+
+        // Toggle clicked
+        if (!isActive) {
+          item.classList.add('active');
+          if (icon) icon.textContent = 'expand_less';
+        }
+      });
+    }
+  });
 });

@@ -1145,10 +1145,15 @@ h4,
 }
 
 .faq-answer {
+  display: none;
   padding: 0 24px 20px;
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
 }
 
 /* ======================================================
