@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'Guardado de eventos en favoritos',
           'Compartir evento en redes sociales y apps de mensajería',
         ],
-        tags: ['Stripe Checkout', 'QR Tickets', 'Social Share'],
+        tags: ['Stripe Checkout', 'Pago Seguro con Stripe', 'Social Share'],
       },
       {
         id: 'map_pins',
