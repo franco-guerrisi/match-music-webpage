@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Publica las necesidades de tu agrupación y recibe solicitudes de músicos calificados con indicación del nivel de destreza requerido (Advanced, Professional).',
         features: [
           'Postulación directa con un solo toque enviando el perfil de músico',
-          'Filtrado por instrumentos requeridos',
-          'Integración con canales oficiales de YouTube y streaming',
+          'Filtrado por instrumentos y nivel de habilidad requeridos',
+          'Enlaces de redirección directos a plataformas externas (YouTube)',
         ],
-        tags: ['Smart Matching', 'PostGIS', 'YouTube API'],
+        tags: ['Smart Matching', 'PostGIS', 'Enlaces a YouTube'],
       },
       {
         id: 'bands_explore',
@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         features: [
           'Botón directo para conectar y abrir chat',
           'Hashtags temáticos (#rock, #metal, #funk, #clásica)',
-          'Perfiles verificados con trayectoria profesional',
+          'Exploración de perfiles completos de instrumentistas por ciudad',
         ],
-        tags: ['Networking', 'Geolocalización', 'Fast Query'],
+        tags: ['Networking', 'Geolocalización', 'Búsqueda por Rol'],
       },
       {
         id: 'band_admin',
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Detalle de Concierto y Venta de Boletos',
         desc: 'Consulta el cartel, recinto, horario, duración y compra tus entradas directamente desde la app con procesamiento seguro de Stripe.',
         features: [
-          'Botón Buy Tickets con precio claro (35€) y confirmación inmediata',
+          'Botón Buy Tickets con precio asignado por el organizador y confirmación inmediata',
           'Guardado de eventos en favoritos',
           'Compartir evento en redes sociales y apps de mensajería',
         ],
@@ -162,9 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
         img: 'assets/screens/Map_location_pin_types.png',
         badge: 'Geolocalización Espacial',
         title: 'Mapa Interactivo con Pines por Tipo',
-        desc: 'Visualiza todos los eventos a tu alrededor mediante un radio de proximidad circular y pines clasificados por categoría musical y promoción.',
+        desc: 'Visualiza todos los eventos a tu alrededor mediante un radio de proximidad circular con 3 tipos de pines: eventos normales, promocionados y múltiples por sala.',
         features: [
-          'Pines normales, destacados con estrella y pins de Moments',
+          '3 tipos de pines: eventos normales, destacados con estrella y eventos múltiples (+1)',
           'Búsqueda geoespacial ultra rápida con PostGIS ST_DWithin',
           'Botón GPS para centrar en tu posición en tiempo real',
         ],
@@ -199,21 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tags: ['Viral Loops', 'Deep Links', 'Social Invites'],
       },
     ],
-    analytics: [
-      {
-        id: 'analytics_dash',
-        name: 'Dashboard Analítico',
-        img: 'assets/screens/Analyticsview.png',
-        badge: 'Métricas en Tiempo Real',
-        title: 'Dashboard Analítico Profesional',
-        desc: 'Supervisa en tiempo real el rendimiento de tu proyecto: visualizaciones, eventos publicados, tasa de engagement y veces guardado.',
-        features: [
-          'Selector para alternar entre perfil de artista y bandas',
-          'Indicadores de porcentaje de crecimiento (+18.5%, +21.6%)',
-          'Botón Exportar PRO para reportes a discográficas y patrocinadores',
-        ],
-        tags: ['Analytics Engine', 'Counter Caching', 'Real-Time'],
-      },
+    messages: [
       {
         id: 'messages',
         name: 'Bandeja de Entrada (Chats)',
@@ -224,9 +210,25 @@ document.addEventListener('DOMContentLoaded', () => {
         features: [
           'WebSockets para entrega instantánea de mensajes',
           'Soporte multi-administrador en la bandeja de la banda',
-          'Previsualización de estados de conversación',
+          'Previsualización de estados de conversación en tiempo real',
         ],
         tags: ['WebSockets', 'Band Inbox', 'PostgreSQL Triggers'],
+      },
+    ],
+    analytics: [
+      {
+        id: 'analytics_dash',
+        name: 'Dashboard Analítico',
+        img: 'assets/screens/Analyticsview.png',
+        badge: 'Métricas en Tiempo Real',
+        title: 'Dashboard Analítico Profesional',
+        desc: 'Supervisa en tiempo real el rendimiento de tu proyecto: visualizaciones, eventos publicados, tasa de engagement y veces guardado.',
+        features: [
+          'Selector para alternar entre perfil de artista y bandas',
+          'Métricas de crecimiento y evolución en tiempo real',
+          'Botón Exportar PRO para reportes a discográficas y patrocinadores',
+        ],
+        tags: ['Analytics Engine', 'Counter Caching', 'Real-Time'],
       },
       {
         id: 'my_account',
@@ -234,13 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
         img: 'assets/screens/AccountView.png',
         badge: 'Centro de Control',
         title: 'Panel Principal de Cuenta de Usuario',
-        desc: 'Tu cuartel general: consulta tu contador de seguidores, estadísticas globales de eventos y accede a las acciones rápidas de la plataforma.',
+        desc: 'Tu cuartel general: consulta tu contador de seguidores, estadísticas globales de eventos, pestañas de gestión de bandas y acceso rápido a configuración.',
         features: [
-          'Código QR de perfil listo para escanear',
+          'Pestaña de Eventos propios para consultar shows activos y el historial completo',
+          'Código QR de perfil listo para compartir en redes',
           'Acceso directo a New Event, View Analytics y Settings',
-          'Pestañas para alternar entre perfil, bandas y eventos guardados',
         ],
-        tags: ['Profile Hub', 'Quick Actions', 'QR Generation'],
+        tags: ['Profile Hub', 'Historial de Eventos', 'QR Generation'],
       },
     ],
     ui: [
@@ -250,13 +252,13 @@ document.addEventListener('DOMContentLoaded', () => {
         img: 'assets/screens/Settingsview.png',
         badge: 'Preferencias & Legal',
         title: 'Configuración Integral de la App',
-        desc: 'Gestiona las notificaciones push, consulta tu estado de suscripción Gigly PRO, revisa facturas de Stripe y cambia el idioma de la app.',
+        desc: 'Gestiona las notificaciones push, cambia o consulta tu plan de suscripción (Freemium / PRO), revisa facturas de Stripe y selecciona el idioma de la app (Español / Inglés).',
         features: [
-          'Switch para alternar entre Modo Claro y Oscuro',
-          'Control granular de notificaciones push',
-          'Acceso directo a políticas de privacidad y términos legales',
+          'Gestión y cambio de plan de suscripción (Freemium vs Gigly PRO)',
+          'Soporte multilingüe con opciones de idioma disponibles (Español e Inglés)',
+          'Control granular de notificaciones push y acceso a políticas legales',
         ],
-        tags: ['Settings API', 'Stripe Billing', 'Push Notifications'],
+        tags: ['Settings API', 'Planes & Suscripción', 'Multi-idioma (ES/EN)'],
       },
       {
         id: 'dark_mode',
