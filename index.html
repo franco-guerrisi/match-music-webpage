@@ -6,14 +6,21 @@
     <title>Gigly - Tu Carrera Musical al Siguiente Nivel</title>
     <meta
       name="description"
-      content="Gigly es la aplicación móvil definitiva para el descubrimiento musical, gestión de bandas y promoción de eventos. Únete a la red profesional de la música independiente."
+      content="Gigly es la aplicación móvil definitiva para el descubrimiento musical, gestión de bandas, eventos y analíticas profesionales. Únete a la red independiente."
     />
+
+    <!-- SEO & Open Graph -->
+    <link rel="canonical" href="https://gigly-app.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gigly-app.com/" />
+    <meta property="og:title" content="Gigly - Tu Carrera Musical al Siguiente Nivel" />
+    <meta property="og:description" content="Gigly es la aplicación móvil definitiva para el descubrimiento musical, gestión de bandas, eventos y analíticas profesionales." />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -35,13 +42,13 @@
           Gigly
         </a>
         <div class="nav-links">
+          <a href="#showcase">App Showcase</a>
           <a href="#features">Características</a>
           <a href="#mission">Misión</a>
-          <a href="#promotion">Promoción</a>
-          <a href="#community">Comunidad</a>
+          <a href="planes/index.html">Planes & Precios</a>
         </div>
         <div class="nav-actions">
-          <button class="btn btn-primary">Descargar App</button>
+          <a href="#download" class="btn btn-primary">Descargar App</a>
         </div>
         <button class="menu-btn material-symbols-rounded">menu</button>
       </div>
@@ -56,44 +63,35 @@
           <h1 class="hero-title">La aplicación móvil definitiva</h1>
           <p class="hero-subtitle">
             Eleva tu carrera con el <span class="text-gradient">ritmo</span> de
-            Gigly
+            Gigly. Conecta con bandas, descubre músicos locales y promociona tus shows.
           </p>
           <div class="hero-buttons">
-            <button class="btn btn-store">
+            <a href="#download" class="btn btn-store">
               <span class="material-symbols-rounded">download</span>
               App Store
-            </button>
-            <button class="btn btn-store">
+            </a>
+            <a href="#download" class="btn btn-store">
               <span class="material-symbols-rounded">android</span>
               Google Play
-            </button>
+            </a>
+            <a href="planes/index.html" class="btn btn-primary">
+              <span class="material-symbols-rounded">workspace_premium</span>
+              Ver Planes
+            </a>
           </div>
         </div>
+
         <div class="hero-visual fade-up delay-1">
-          <div class="mockup-container">
-            <div class="mockup-screen">
+          <!-- Real App Mockup Frame -->
+          <div class="phone-mockup-frame">
+            <div class="phone-island">
+              <div class="phone-island-camera"></div>
+            </div>
+            <div class="phone-screen-container">
               <img
-                src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?auto=format&fit=crop&w=600&q=80"
-                alt="Concierto"
-                class="mockup-img"
+                src="assets/screens/Bandprofileview.png"
+                alt="Perfil de Banda en Gigly Mobile"
               />
-              <div class="mockup-ui">
-                <div class="ui-header">
-                  <span class="material-symbols-rounded">menu</span>
-                  <span>Feed Local</span>
-                  <span class="material-symbols-rounded">notifications</span>
-                </div>
-                <div class="ui-card glass">
-                  <div class="ui-user">
-                    <div class="avatar"></div>
-                    <div>
-                      <div class="name">The Neon Lights</div>
-                      <div class="location">A 2km de ti</div>
-                    </div>
-                  </div>
-                  <div class="ui-action btn-primary">Ver Perfil</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -116,13 +114,107 @@
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- ======================================================
+         INTERACTIVE APP SHOWCASE SECTION (15 SCREENS)
+         ====================================================== -->
+    <section id="showcase" class="showcase-section">
+      <div class="section-header fade-up text-center" style="margin-bottom: 30px">
+        <div class="badge">Capturas 100% Reales de la App</div>
+        <h2 class="section-title">
+          Explora la Experiencia <span class="text-gradient">Gigly Mobile</span>
+        </h2>
+        <p class="section-desc" style="max-width: 650px; margin: 0 auto">
+          Descubre todas las pantallas, funcionalidades y flujos diseñados especialmente para músicos, directores y organizadores.
+        </p>
+      </div>
+
+      <!-- Main Category Tabs -->
+      <div class="category-tabs fade-up">
+        <button class="category-tab-btn active" data-category="bands">
+          <span class="material-symbols-rounded">groups</span>
+          Bandas & Músicos
+        </button>
+        <button class="category-tab-btn" data-category="events">
+          <span class="material-symbols-rounded">event</span>
+          Eventos & Mapa
+        </button>
+        <button class="category-tab-btn" data-category="analytics">
+          <span class="material-symbols-rounded">insights</span>
+          Analíticas & Cuenta
+        </button>
+        <button class="category-tab-btn" data-category="ui">
+          <span class="material-symbols-rounded">dark_mode</span>
+          Ajustes & Dark Mode
+        </button>
+      </div>
+
+      <!-- Subscreen Selector Pills (Dynamic) -->
+      <div id="subscreen-selector" class="subscreen-selector fade-up">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Showcase Display Box (Device Frame + Info) -->
+      <div class="showcase-display glass fade-up">
+        
+        <!-- Interactive Smartphone Frame -->
+        <div class="phone-mockup-frame" style="margin: 0 auto">
+          <div class="phone-island">
+            <div class="phone-island-camera"></div>
+          </div>
+          <div class="phone-screen-container">
+            <img
+              id="showcase-screen-img"
+              src="assets/screens/Bandprofileview.png"
+              alt="Captura de pantalla de la app Gigly"
+            />
+          </div>
+        </div>
+
+        <!-- Showcase Detail Info Box -->
+        <div class="showcase-info">
+          <div id="showcase-badge" class="showcase-badge">Ficha Oficial de Banda</div>
+          <h3 id="showcase-title" class="showcase-title">Perfil Integral de Banda</h3>
+          <p id="showcase-desc" class="showcase-desc">
+            Presenta tu banda al mundo con fotografías inmersivas en alta resolución, etiquetas de géneros musicales, ubicación geolocalizada y botón para captar seguidores al instante.
+          </p>
+
+          <ul id="showcase-features" class="showcase-features-list">
+            <li>
+              <span class="material-symbols-rounded">check_circle</span>
+              <span>Traducción instantánea de biografía con el botón <em>Translate</em></span>
+            </li>
+            <li>
+              <span class="material-symbols-rounded">check_circle</span>
+              <span>Acceso directo a chat mediante <em>Contact Band</em></span>
+            </li>
+            <li>
+              <span class="material-symbols-rounded">check_circle</span>
+              <span>Código QR interactivo para compartir tu perfil en redes</span>
+            </li>
+          </ul>
+
+          <div id="showcase-tech-tags" class="showcase-tech-tags">
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Expo Router</span>
+            <span class="tech-tag">Live Translation</span>
+          </div>
+
+          <div style="margin-top: 10px">
+            <a href="planes/index.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem">
+              Ver Planes Disponibles →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
     <section id="features" class="section features-section">
       <div class="section-header fade-up">
-        <h2 class="section-title">Capacidades de la App</h2>
+        <h2 class="section-title">Capacidades Tecnológicas</h2>
         <p class="section-desc">
-          Todo lo que necesitas para gestionar tu proyecto musical desde la
-          palma de tu mano.
+          Tecnología de última generación construida para el ritmo de la música independiente.
         </p>
       </div>
 
@@ -132,12 +224,9 @@
           <div class="feature-icon">
             <span class="material-symbols-rounded">explore</span>
           </div>
-          <h3>Descubrimiento Musical Inteligente</h3>
+          <h3>Geo-Audiciones (PostGIS)</h3>
           <p>
-            Encuentra músicos locales y eventos mediante
-            <strong>Geo-Audiciones</strong> impulsadas por PostGIS. Nuestro
-            sistema de Smart Matching conecta artistas por estilo, nivel y
-            proximidad real.
+            Encuentra bandas y músicos cercanos con búsquedas espaciales optimizadas por coordenadas exactas y radios de cobertura inteligentes.
           </p>
         </div>
 
@@ -146,25 +235,20 @@
           <div class="feature-icon">
             <span class="material-symbols-rounded">forum</span>
           </div>
-          <h3>Gestión de Bandas (Band Inbox)</h3>
+          <h3>Band Inbox & WebSockets</h3>
           <p>
-            Organiza tu grupo con un centro de mensajería colaborativa.
-            Comunícate en tiempo real con WebSockets, asigna roles de
-            administración y coordina ensayos y fechas fácilmente.
+            Mensajería colaborativa en tiempo real. Gestiona la bandeja de entrada de tu banda con múltiples administradores y respuestas instantáneas.
           </p>
         </div>
 
         <!-- Feature 3 -->
         <div class="feature-card glass fade-up delay-2">
           <div class="feature-icon">
-            <span class="material-symbols-rounded">movie</span>
+            <span class="material-symbols-rounded">confirmation_number</span>
           </div>
-          <h3>Moments & Clips</h3>
+          <h3>Venta de Boletos con Stripe</h3>
           <p>
-            Muestra tu talento con <strong>Moments</strong> (publicaciones
-            efímeras de 16 horas) para actualizaciones rápidas, o crea un
-            impacto duradero con <strong>Clips</strong> permanentes de tus
-            mejores shows.
+            Vende entradas para tus conciertos directamente en la app con pasarela segura, códigos QR de acceso y liquidación rápida.
           </p>
         </div>
 
@@ -173,11 +257,9 @@
           <div class="feature-icon">
             <span class="material-symbols-rounded">insights</span>
           </div>
-          <h3>Analíticas en Tiempo Real</h3>
+          <h3>Analíticas Pro en Tiempo Real</h3>
           <p>
-            Toma el control de tu crecimiento con métricas detalladas de visitas
-            a tu perfil, guardados, clics en boletos y engagement de eventos.
-            Información vital para tu carrera.
+            Controla visualizaciones, guardados, clics en boletos y estadísticas demográficas de tus seguidores con gráficos avanzados.
           </p>
         </div>
 
@@ -186,11 +268,9 @@
           <div class="feature-icon">
             <span class="material-symbols-rounded">library_music</span>
           </div>
-          <h3>Integración Total</h3>
+          <h3>Sincronización de Streaming</h3>
           <p>
-            Sincroniza tus perfiles de Spotify, Apple Music y YouTube
-            directamente en la app para mostrar tu catálogo musical a
-            organizadores y fans al instante.
+            Conecta YouTube, Spotify y Apple Music para reproducir el catálogo sonoro de tu proyecto desde la misma app.
           </p>
         </div>
 
@@ -199,75 +279,57 @@
           <div class="feature-icon">
             <span class="material-symbols-rounded">bolt</span>
           </div>
-          <h3>Rendimiento Nativo</h3>
+          <h3>Counter Caching Ultrarrápido</h3>
           <p>
-            Desarrollada en React Native, la app cuenta con tecnología de
-            Counter Caching para una navegación fluida, instantánea e
-            ininterrumpida en cualquier dispositivo.
+            Tiempos de respuesta inmediatos y navegación fluida mediante sincronización optimizada por triggers de base de datos.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Promotion System -->
+    <!-- Promotion System Teaser -->
     <section id="promotion" class="section promo-section">
       <div class="section-header fade-up">
-        <h2 class="section-title">Sistema de Promoción</h2>
+        <div class="badge">Monetización & Alcance</div>
+        <h2 class="section-title">Planes y Sistema de Promoción</h2>
         <p class="section-desc">
-          Impulsa tus eventos directamente desde la app con nuestra integración
-          de Stripe de 4 niveles.
+          Empieza gratis con el <strong>Modo Freemium</strong> o potencia tu alcance al máximo con <strong>Gigly PRO</strong>.
         </p>
       </div>
 
       <div class="tiers-grid">
         <div class="tier-card glass fade-up">
-          <div class="tier-name">Free</div>
+          <div class="tier-name">Modo Freemium</div>
           <div class="tier-price">Gratis</div>
-          <p>Presencia básica en el feed local y perfil de artista estándar.</p>
+          <p>Perfil completo, búsqueda global, mensajería, creación de eventos y postulación a audiciones.</p>
         </div>
-        <div class="tier-card glass fade-up delay-1">
-          <div class="tier-name text-primary">Basic</div>
-          <div class="tier-price">Esencial</div>
-          <p>
-            Prioridad moderada en búsquedas y acceso a analíticas básicas de tu
-            banda.
-          </p>
+        <div class="tier-card glass featured fade-up delay-1">
+          <div class="popular-tag">★ 14 Días Gratis</div>
+          <div class="tier-name text-gradient">Gigly PRO</div>
+          <div class="tier-price">3,33 € <span style="font-size: 0.8rem; color: var(--text-secondary)">/mes (Anual)</span></div>
+          <p>Dashboard de analíticas avanzado, métricas de venta de boletos, demografía de seguidores y reportes.</p>
         </div>
-        <div class="tier-card glass featured fade-up delay-2">
-          <div class="popular-tag">Más Popular</div>
-          <div class="tier-name text-gradient">Premium</div>
-          <div class="tier-price">Avanzado</div>
-          <p>
-            Alta visibilidad en el mapa, Clips destacados y analíticas de
-            asistencia avanzadas.
-          </p>
-        </div>
-        <div class="tier-card glass fade-up delay-3">
-          <div class="tier-name text-white">Featured</div>
-          <div class="tier-price">Máximo</div>
-          <p>
-            Posición #1 garantizada en la ciudad, notificaciones push a fans
-            locales y soporte prioritario.
-          </p>
-        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px" class="fade-up">
+        <a href="planes/index.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1.05rem">
+          Ver Comparativa Detallada de Planes →
+        </a>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section cta-section fade-up">
+    <!-- Download CTA -->
+    <section id="download" class="section cta-section fade-up">
       <div class="cta-container glass">
         <h2>¿Listo para subir al escenario?</h2>
         <p>
-          Descarga Gigly hoy mismo y descubre cómo la tecnología puede
-          transformar tu carrera musical.
+          Descarga Gigly hoy mismo y descubre cómo la tecnología puede transformar tu carrera musical.
         </p>
         <div class="hero-buttons cta-buttons">
-          <button
-            class="btn btn-primary cta-primary-btn"
-            style="padding: 16px 32px; font-size: 1.1rem"
-          >
-            Descargar Gigly
-          </button>
+          <a href="#" class="btn btn-primary cta-primary-btn" style="padding: 16px 32px; font-size: 1.1rem">
+            <span class="material-symbols-rounded">download</span>
+            Descargar Gigly Gratis
+          </a>
         </div>
       </div>
     </section>
@@ -284,10 +346,11 @@
         </div>
         <div class="footer-links">
           <div class="link-group">
-            <h4>Aplicación</h4>
-            <a href="#">Descargar iOS</a>
-            <a href="#">Descargar Android</a>
-            <a href="#">Funcionalidades</a>
+            <h4>Navegación</h4>
+            <a href="#showcase">App Showcase</a>
+            <a href="#features">Características</a>
+            <a href="planes/index.html">Planes & Precios</a>
+            <a href="#download">Descargar App</a>
           </div>
           <div class="link-group">
             <h4>Legal</h4>
@@ -297,9 +360,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>
-          &copy; 2026 Gigly Inc. (Gigly). Todos los derechos reservados.
-        </p>
+        <p>&copy; 2026 Gigly Inc. (Gigly). Todos los derechos reservados.</p>
       </div>
     </footer>
 
