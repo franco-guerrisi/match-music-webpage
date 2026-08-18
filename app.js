@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         id: 'messages',
         name: 'Bandeja de Entrada (Chats)',
-        img: 'assets/screens/Messagesview.png',
+        img: 'assets/screens/MessagesView.png?v=2',
         badge: 'Colaboración en Vivo',
         title: 'Mensajería Directa y Band Inbox',
         desc: 'Comunícate con organizadores, promotores y músicos con alternancia rápida entre tu bandeja Personal y el Inbox oficial de tu Banda.',
