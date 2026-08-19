@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación de Cuenta - Gigly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --card-border: #27272a;
+      --primary: #ea580c;
+      --primary-hover: #f97316;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --success: #10b981;
+      --error: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(234, 88, 12, 0.15) 0%, rgba(0,0,0,0) 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .icon-box {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .icon-box.loading {
+      background-color: rgba(234, 88, 12, 0.1);
+      color: var(--primary);
+      border: 2px dashed var(--primary);
+      animation: spin 3s linear infinite;
+    }
+
+    .icon-box.success {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 2px solid var(--success);
+    }
+
+    .icon-box.error {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: var(--error);
+      border: 2px solid var(--error);
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background-color: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: #71717a;
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Gigly</div>
+
+    <div id="loadingState">
+      <div class="icon-box loading">⏳</div>
+      <h1>Verificando tu cuenta...</h1>
+      <p>Estamos activando tu cuenta de Gigly. Solo tomará unos segundos.</p>
+    </div>
+
+    <div id="successState" style="display: none;">
+      <div class="icon-box success">✓</div>
+      <h1>¡Cuenta Activada con Éxito!</h1>
+      <p>Tu correo ha sido verificado correctamente. Ya puedes comenzar a conectar con músicos, bandas y eventos.</p>
+      <a id="openAppBtn" href="gigly://verify-success" class="btn">Abrir Gigly en tu Móvil</a>
+    </div>
+
+    <div id="errorState" style="display: none;">
+      <div class="icon-box error">✗</div>
+      <h1>No se pudo verificar</h1>
+      <p id="errorMessage">El enlace de verificación es inválido o ha expirado. Puedes solicitar un nuevo código desde la app.</p>
+      <a href="gigly://" class="btn">Volver a la App</a>
+    </div>
+
+    <p class="footer-text">© 2026 Gigly. Plataforma de la Industria Musical.</p>
+  </div>
+
+  <script>
+    (async function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      const email = urlParams.get('email');
+
+      const loadingEl = document.getElementById('loadingState');
+      const successEl = document.getElementById('successState');
+      const errorEl = document.getElementById('errorState');
+      const errorMsgEl = document.getElementById('errorMessage');
+      const openAppBtn = document.getElementById('openAppBtn');
+
+      if (!token && !email) {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorMsgEl.textContent = 'No se encontró un token de verificación en el enlace.';
+        return;
+      }
+
+      // Configurar enlace para abrir la app móvil
+      if (token) {
+        openAppBtn.href = 'gigly://verify-email?token=' + encodeURIComponent(token);
+      }
+
+      // Backend API URL
+      const API_URL = 'https://match-music-backend-production.up.railway.app/api/auth/verify-email';
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, email })
+        });
+
+        const data = await response.json();
+
+        loadingEl.style.display = 'none';
+        if (response.ok && data.success) {
+          successEl.style.display = 'block';
+          // Intentar abrir la app automáticamente si está en móvil
+          if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            setTimeout(() => {
+              window.location.href = openAppBtn.href;
+            }, 1000);
+          }
+        } else {
+          errorEl.style.display = 'block';
+          if (data.error) errorMsgEl.textContent = data.error;
+        }
+      } catch (err) {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorMsgEl.textContent = 'Hubo un error de conexión al verificar tu cuenta. Por favor abre la app e ingresa el código de 6 dígitos.';
+      }
+    })();
+  </script>
+</body>
+</html>

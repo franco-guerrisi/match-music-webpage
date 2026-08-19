@@ -1,8 +1,33 @@
 {
+  "cleanUrls": true,
   "rewrites": [
+    {
+      "source": "/verify-email",
+      "destination": "/verify-email.html"
+    },
     {
       "source": "/event/:id",
       "destination": "https://match-music-backend-production.up.railway.app/api/events/share/:id"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
     }
   ]
 }
