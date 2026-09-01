@@ -1,9 +1,63 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/t_rminos_de_servicio/:path*",
+      "destination": "/terminos-de-servicio",
+      "permanent": true
+    },
+    {
+      "source": "/t_rminos_de_servicio",
+      "destination": "/terminos-de-servicio",
+      "permanent": true
+    },
+    {
+      "source": "/pol_tica_de_privacidad/:path*",
+      "destination": "/politica-de-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/pol_tica_de_privacidad",
+      "destination": "/politica-de-privacidad",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/verify-email",
       "destination": "/verify-email.html"
+    },
+    {
+      "source": "/terminos",
+      "destination": "/terminos-de-servicio/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terminos-de-servicio/index.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terminos-de-servicio/index.html"
+    },
+    {
+      "source": "/privacidad",
+      "destination": "/politica-de-privacidad/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/politica-de-privacidad/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/politica-de-privacidad/index.html"
+    },
+    {
+      "source": "/planes",
+      "destination": "/planes/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/planes/index.html"
     },
     {
       "source": "/event/:id",

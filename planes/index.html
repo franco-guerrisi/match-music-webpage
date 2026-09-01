@@ -42,15 +42,21 @@
           Gigly
         </a>
         <div class="nav-links">
-          <a href="../index.html">Inicio</a>
-          <a href="../index.html#showcase">App Showcase</a>
-          <a href="../index.html#features">Características</a>
-          <a href="index.html" style="color: var(--primary-light)">Planes & Precios</a>
+          <a href="../index.html" data-i18n="nav.home">Inicio</a>
+          <a href="../index.html#showcase" data-i18n="nav.showcase">App Showcase</a>
+          <a href="../index.html#features" data-i18n="nav.features">Características</a>
+          <a href="index.html" style="color: var(--primary-light)" data-i18n="nav.pricing">Planes & Precios</a>
         </div>
         <div class="nav-actions">
-          <a href="../index.html#download" class="btn btn-primary">Descargar App</a>
+          <!-- Language Switcher (ES / EN) -->
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="../index.html#download" class="btn btn-primary" data-i18n="nav.download">Descargar App</a>
         </div>
-        <button class="menu-btn material-symbols-rounded">menu</button>
+        <button class="menu-btn material-symbols-rounded" aria-label="Abrir menú">menu</button>
       </div>
     </nav>
 
@@ -58,20 +64,20 @@
     <header class="pricing-page-hero">
       <div class="hero-background"></div>
       <div class="fade-up">
-        <div class="badge">Suscripciones Transparentes ⚡ Sin Letra Pequeña</div>
-        <h1 class="hero-title" style="font-size: 3.2rem">
+        <div class="badge" data-i18n="pricing.hero.badge">Suscripciones Transparentes ⚡ Sin Letra Pequeña</div>
+        <h1 class="hero-title" style="font-size: 3.2rem" data-i18n-html="pricing.hero.title">
           Conecta con músicos de <span class="text-gradient">todo el mundo</span>
         </h1>
-        <p class="hero-subtitle" style="margin: 0 auto">
+        <p class="hero-subtitle" style="margin: 0 auto" data-i18n-html="pricing.hero.subtitle">
           Compara los planes y elige la opción que mejor se adapte a tus necesidades. Empieza gratis o desbloquea todo el potencial de tu proyecto con <strong>Gigly PRO</strong>.
         </p>
 
         <!-- Billing Toggle -->
         <div class="billing-toggle-wrapper">
-          <button id="billing-monthly" class="billing-toggle-btn">Facturación Mensual</button>
+          <button id="billing-monthly" class="billing-toggle-btn" data-i18n="pricing.toggle.monthly">Facturación Mensual</button>
           <button id="billing-annual" class="billing-toggle-btn active">
-            Facturación Anual
-            <span class="discount-badge">-33% AHORRO</span>
+            <span data-i18n="pricing.toggle.annual">Facturación Anual</span>
+            <span class="discount-badge" data-i18n="pricing.toggle.discount">-33% AHORRO</span>
           </button>
         </div>
       </div>
@@ -84,53 +90,53 @@
         <!-- CARD 1: Modo Freemium -->
         <div class="plan-card glass fade-up">
           <div class="plan-header">
-            <div class="plan-name">Modo Freemium</div>
-            <div class="plan-tagline">Para músicos y artistas que están comenzando</div>
+            <div class="plan-name" data-i18n="pricing.freemium.title">Modo Freemium</div>
+            <div class="plan-tagline" data-i18n="pricing.freemium.tagline">Para músicos y artistas que están comenzando</div>
           </div>
 
           <div class="plan-price-box">
-            <div class="plan-price">Gratis</div>
-            <div class="plan-price-period">Para siempre · Sin tarjeta requerida</div>
+            <div class="plan-price" data-i18n="pricing.freemium.price">Gratis</div>
+            <div class="plan-price-period" data-i18n="pricing.freemium.period">Para siempre · Sin tarjeta requerida</div>
           </div>
 
           <div class="plan-trial-notice" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border-color: rgba(255, 255, 255, 0.1);">
             <span class="material-symbols-rounded">check_circle</span>
-            Acceso inmediato a la red global de Gigly
+            <span data-i18n="pricing.freemium.notice">Acceso inmediato a la red global de Gigly</span>
           </div>
 
           <ul class="plan-features-list">
             <li>
               <span class="check-icon">✓</span>
-              <span><strong>Perfil de músico completo:</strong> Instrumentos, bio, fotos, enlaces a Spotify y YouTube.</span>
+              <span data-i18n-html="pricing.freemium.f1"><strong>Perfil de músico completo:</strong> Instrumentos, bio, fotos, enlaces a Spotify y YouTube.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span><strong>Búsqueda global:</strong> Encuentra músicos y bandas filtrados por ciudad y estilo.</span>
+              <span data-i18n-html="pricing.freemium.f2"><strong>Búsqueda global:</strong> Encuentra músicos y bandas filtrados por ciudad y estilo.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span><strong>Mensajería y chats:</strong> Conversaciones directas en tiempo real con tus conexiones.</span>
+              <span data-i18n-html="pricing.freemium.f3"><strong>Mensajería y chats:</strong> Conversaciones directas en tiempo real con tus conexiones.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span><strong>Creación de eventos:</strong> Publica shows locales y participa en eventos de la comunidad.</span>
+              <span data-i18n-html="pricing.freemium.f4"><strong>Creación de eventos:</strong> Publica shows locales y participa en eventos de la comunidad.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span><strong>Unirte y administrar bandas:</strong> Postúlate a audiciones abiertas en un solo toque.</span>
+              <span data-i18n-html="pricing.freemium.f5"><strong>Unirte y administrar bandas:</strong> Postúlate a audiciones abiertas en un solo toque.</span>
             </li>
           </ul>
 
-          <a href="../index.html#download" class="btn btn-store" style="width: 100%">Continuar con Freemium</a>
+          <a href="../index.html#download" class="btn btn-store" style="width: 100%" data-i18n="pricing.freemium.btn">Continuar con Freemium</a>
         </div>
 
         <!-- CARD 2: Gigly PRO -->
         <div class="plan-card glass featured fade-up delay-1">
-          <div class="plan-ribbon">★ MÁS POPULAR · 14 DÍAS GRATIS</div>
+          <div class="plan-ribbon" data-i18n="pricing.pro.ribbon">★ MÁS POPULAR · 14 DÍAS GRATIS</div>
 
           <div class="plan-header" style="margin-top: 10px">
-            <div class="plan-name text-gradient">Gigly PRO</div>
-            <div class="plan-tagline">El impulso definitivo para bandas consolidadas, directores y managers</div>
+            <div class="plan-name text-gradient" data-i18n="pricing.pro.title">Gigly PRO</div>
+            <div class="plan-tagline" data-i18n="pricing.pro.tagline">El impulso definitivo para bandas consolidadas, directores y managers</div>
           </div>
 
           <div class="plan-price-box">
@@ -140,184 +146,178 @@
 
           <div class="plan-trial-notice">
             <span class="material-symbols-rounded">redeem</span>
-            <strong>14 días de prueba gratis</strong> — sin cobros hasta el día 15
+            <span data-i18n-html="pricing.pro.trial"><strong>14 días de prueba gratis</strong> — sin cobros hasta el día 15</span>
           </div>
 
           <ul class="plan-features-list">
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Todo lo de Freemium incluido</strong> sin restricciones de uso.</span>
+              <span data-i18n-html="pricing.pro.f1"><strong>Todo lo de Freemium incluido</strong> sin restricciones de uso.</span>
             </li>
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Analíticas avanzadas de perfil:</strong> Métricas de vistas, alcance y guardados con tasas de crecimiento.</span>
+              <span data-i18n-html="pricing.pro.f2"><strong>Dashboard de Analíticas Avanzado:</strong> Visualizaciones, engagement y alcance en tiempo real.</span>
             </li>
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Estadísticas por evento:</strong> Embudos de conversión, clics en venta de boletos y asistencias.</span>
+              <span data-i18n-html="pricing.pro.f3"><strong>Métricas de Venta de Boletos:</strong> Rendimiento comercial de eventos creados.</span>
             </li>
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Gráficos de tendencias:</strong> Producción de eventos vs. engagement mensual histórico.</span>
+              <span data-i18n-html="pricing.pro.f4"><strong>Demografía de Seguidores:</strong> Edad, ubicación geográfica y géneros preferidos.</span>
             </li>
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Métricas demográficas:</strong> Edad, ubicación por ciudades, géneros musicales preferidos y desglose por género.</span>
+              <span data-i18n-html="pricing.pro.f5"><strong>Band Inbox Colaborativo Ilimitado:</strong> Bandeja grupal con múltiples administradores.</span>
             </li>
             <li>
               <span class="pro-check-icon">★</span>
-              <span><strong>Exportación PRO de reportes:</strong> Descarga métricas en PDF/Excel para patrocinadores o festivales.</span>
+              <span data-i18n-html="pricing.pro.f6"><strong>Soporte Prioritario:</strong> Atención rápida por parte de nuestro equipo.</span>
             </li>
           </ul>
 
-          <a href="../index.html#download" class="btn btn-primary" style="width: 100%">Probar 14 Días Gratis</a>
+          <a href="../index.html#download" class="btn btn-primary" style="width: 100%; box-shadow: 0 4px 20px rgba(234, 88, 12, 0.5);" data-i18n="pricing.pro.btn">
+            Probar 14 Días Gratis
+          </a>
         </div>
 
       </div>
 
-      <!-- Feature Matrix Comparison Table -->
-      <section class="matrix-section fade-up">
-        <h2 class="section-title text-center" style="margin-bottom: 40px">
-          Comparativa <span class="text-gradient">Detallada</span> de Funcionalidades
-        </h2>
-
-        <div class="table-responsive glass">
-          <table class="matrix-table">
+      <!-- Feature Comparison Matrix -->
+      <section class="comparison-table-section fade-up">
+        <h2 class="section-title text-center" style="margin-bottom: 40px" data-i18n="pricing.table.title">Comparativa de Funcionalidades</h2>
+        <div class="table-wrapper glass">
+          <table class="comparison-table">
             <thead>
               <tr>
-                <th>Funcionalidad / Característica</th>
-                <th>Modo Freemium</th>
-                <th>Gigly PRO ⚡</th>
+                <th data-i18n="pricing.table.feature">Funcionalidad</th>
+                <th class="text-center" data-i18n="pricing.table.freemium">Freemium</th>
+                <th class="text-center highlight-col" data-i18n="pricing.table.pro">Gigly PRO</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Precio y Modalidad</strong></td>
-                <td>Gratis para siempre</td>
-                <td><span class="text-gradient" style="font-weight: 700">4,99 €/mes ó 39,99 €/año</span></td>
+                <td data-i18n="pricing.table.row1">Perfil de músico & enlaces sociales</td>
+                <td class="text-center"><span class="table-check">✓</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td><strong>Periodo de Prueba</strong></td>
-                <td>N/A</td>
-                <td><span style="color: #10b981; font-weight: 600">14 Días Gratis</span></td>
+                <td data-i18n="pricing.table.row2">Explorador y búsqueda de músicos</td>
+                <td class="text-center"><span class="table-check">✓</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Perfil de Artista / Músico Completo</td>
-                <td>✓ Incluido</td>
-                <td>✓ Incluido</td>
+                <td data-i18n="pricing.table.row3">Mensajería y chat directo</td>
+                <td class="text-center"><span class="table-check">✓</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Búsqueda Global y Filtro por Instrumentos</td>
-                <td>✓ Incluido</td>
-                <td>✓ Incluido</td>
+                <td data-i18n="pricing.table.row4">Creación y publicación de eventos</td>
+                <td class="text-center"><span class="table-check">✓</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Mensajería en tiempo real y Band Inbox</td>
-                <td>✓ Incluido</td>
-                <td>✓ Incluido</td>
+                <td data-i18n="pricing.table.row5">Postulación a vacantes y audiciones</td>
+                <td class="text-center"><span class="table-check">✓</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Postulación a Audiciones Abiertas</td>
-                <td>✓ Incluido</td>
-                <td>✓ Incluido</td>
+                <td data-i18n="pricing.table.row6">Dashboard de analíticas en tiempo real</td>
+                <td class="text-center"><span class="table-cross">✕</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Publicación de Conciertos y Eventos</td>
-                <td>✓ Incluido</td>
-                <td>✓ Incluido</td>
+                <td data-i18n="pricing.table.row7">Estadísticas demográficas de audiencia</td>
+                <td class="text-center"><span class="table-cross">✕</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Dashboard de Analíticas en Tiempo Real</td>
-                <td>Básico</td>
-                <td><span class="pro-check-icon">★</span> <strong>Completo e interactivo</strong></td>
+                <td data-i18n="pricing.table.row8">Métricas de clics en compra de tickets</td>
+                <td class="text-center"><span class="table-cross">✕</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Métricas de Clics en Boletos y Embudo</td>
-                <td>—</td>
-                <td><span class="pro-check-icon">★</span> Incluido</td>
+                <td data-i18n="pricing.table.row9">Band Inbox con múltiples administradores</td>
+                <td class="text-center"><span class="table-cross">✕</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
               <tr>
-                <td>Gráfico Volumen vs. Engagement</td>
-                <td>—</td>
-                <td><span class="pro-check-icon">★</span> Incluido</td>
-              </tr>
-              <tr>
-                <td>Estadísticas Demográficas de Seguidores</td>
-                <td>—</td>
-                <td><span class="pro-check-icon">★</span> Edad, ciudad, género y estilos</td>
-              </tr>
-              <tr>
-                <td>Exportación de Informes para Prensa y Sponsors</td>
-                <td>—</td>
-                <td><span class="pro-check-icon">★</span> Incluido</td>
-              </tr>
-              <tr>
-                <td>Soporte Técnico</td>
-                <td>Estándar</td>
-                <td>Prioritario 24/7</td>
+                <td data-i18n="pricing.table.row10">Soporte prioritario</td>
+                <td class="text-center"><span class="table-cross">✕</span></td>
+                <td class="text-center highlight-col"><span class="table-check pro">✓</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- FAQ Section -->
-      <section class="faq-section fade-up">
-        <h2 class="section-title text-center" style="margin-bottom: 40px">
-          Preguntas <span class="text-gradient">Frecuentes</span>
-        </h2>
+      <!-- Pricing FAQ Accordion -->
+      <section class="pricing-faq-section fade-up">
+        <h2 class="section-title text-center" style="margin-bottom: 40px" data-i18n="pricing.faq.title">Preguntas Frecuentes sobre los Planes</h2>
+        <div class="faq-container">
+          <div class="faq-item glass">
+            <button class="faq-question">
+              <span data-i18n="pricing.faq.q1">¿Cómo funciona la prueba gratuita de 14 días?</span>
+              <span class="material-symbols-rounded">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="pricing.faq.a1">
+                Puedes activar Gigly PRO y disfrutar de todas las funcionalidades avanzadas durante 14 días sin costo alguno. No se realizará ningún cargo hasta que termine el periodo de prueba. Puedes cancelar en cualquier momento desde los ajustes de la app.
+              </p>
+            </div>
+          </div>
 
-        <div class="faq-item glass">
-          <div class="faq-question">
-            <span>¿Cómo funciona la prueba gratuita de 14 días de Gigly PRO?</span>
-            <span class="material-symbols-rounded">expand_more</span>
+          <div class="faq-item glass">
+            <button class="faq-question">
+              <span data-i18n="pricing.faq.q2">¿Puedo cambiar de plan mensual a anual más tarde?</span>
+              <span class="material-symbols-rounded">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="pricing.faq.a2">
+                Sí, puedes actualizar tu suscripción de mensual a anual en cualquier momento desde la sección de Ajustes dentro de la aplicación móvil y disfrutar del 33% de descuento anual.
+              </p>
+            </div>
           </div>
-          <div class="faq-answer">
-            Al suscribirte a Gigly PRO tienes 14 días completos para probar todas las funciones analíticas avanzadas sin ningún compromiso. No se realiza ningún cobro hasta el día 15. Puedes cancelar en cualquier momento desde la sección de Ajustes de la app antes de que finalice la prueba.
-          </div>
-        </div>
 
-        <div class="faq-item glass">
-          <div class="faq-question">
-            <span>¿Puedo cambiar entre el plan mensual y el anual en cualquier momento?</span>
-            <span class="material-symbols-rounded">expand_more</span>
+          <div class="faq-item glass">
+            <button class="faq-question">
+              <span data-i18n="pricing.faq.q3">¿Qué métodos de pago se aceptan?</span>
+              <span class="material-symbols-rounded">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="pricing.faq.a3">
+                Aceptamos tarjetas de crédito y débito principales (Visa, Mastercard, American Express), así como Apple Pay y Google Pay a través de la pasarela segura de Stripe.
+              </p>
+            </div>
           </div>
-          <div class="faq-answer">
-            Sí. Puedes cambiar tu ciclo de facturación directamente desde la pantalla de Ajustes > Mi Suscripción. Si cambias al plan anual, se aplicará el descuento del 33% automáticamente.
-          </div>
-        </div>
 
-        <div class="faq-item glass">
-          <div class="faq-question">
-            <span>¿Qué métodos de pago son aceptados?</span>
-            <span class="material-symbols-rounded">expand_more</span>
-          </div>
-          <div class="faq-answer">
-            Procesamos todos los pagos de forma 100% segura a través de <strong>Stripe</strong> y las tiendas oficiales de <strong>Apple App Store</strong> y <strong>Google Play Store</strong>. Aceptamos tarjetas de crédito/débito (Visa, Mastercard, American Express), Apple Pay y Google Pay.
-          </div>
-        </div>
-
-        <div class="faq-item glass">
-          <div class="faq-question">
-            <span>¿El Modo Freemium tiene algún límite de tiempo?</span>
-            <span class="material-symbols-rounded">expand_more</span>
-          </div>
-          <div class="faq-answer">
-            No. El Modo Freemium es gratis para siempre. Podrás mantener tu perfil activo, descubrir músicos, postularte a vacantes y participar en la comunidad de Gigly de manera indefinida sin ningún coste.
+          <div class="faq-item glass">
+            <button class="faq-question">
+              <span data-i18n="pricing.faq.q4">¿Puedo usar Gigly gratis para siempre?</span>
+              <span class="material-symbols-rounded">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="pricing.faq.a4">
+                Sí, el modo Freemium es totalmente gratuito y te permite crear tu perfil, publicar eventos, chatear y buscar músicos sin ningún límite de tiempo.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Bottom CTA Banner -->
-      <div class="cta-container glass fade-up" style="margin-top: 80px">
-        <h2>¿Listo para dar el salto profesional?</h2>
-        <p>Descarga la app de Gigly y activa tu prueba gratuita de 14 días hoy mismo.</p>
-        <div class="hero-buttons cta-buttons">
-          <a href="../index.html#download" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem">
-            Descargar Gigly Gratis
-          </a>
+      <section class="cta-section fade-up" style="padding: 0 0 60px">
+        <div class="cta-container glass">
+          <h2 data-i18n="cta.title">¿Listo para subir al escenario?</h2>
+          <p data-i18n="cta.desc">Descarga Gigly hoy mismo y empieza a conectar con el ecosistema de la música en vivo.</p>
+          <div class="hero-buttons cta-buttons">
+            <a href="../index.html#download" class="btn btn-primary cta-primary-btn" style="padding: 16px 32px; font-size: 1.1rem">
+              <span class="material-symbols-rounded">download</span>
+              <span data-i18n="cta.btn">Descargar Gigly Gratis</span>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -328,29 +328,35 @@
             <span class="material-symbols-rounded logo-icon">graphic_eq</span>
             Gigly
           </div>
-          <p>Construido para el ritmo de la industria musical independiente.</p>
+          <p data-i18n="footer.slogan">Construido para el ritmo de la industria musical independiente.</p>
         </div>
         <div class="footer-links">
           <div class="link-group">
-            <h4>Navegación</h4>
-            <a href="../index.html">Inicio</a>
-            <a href="../index.html#showcase">App Showcase</a>
-            <a href="../index.html#features">Características</a>
-            <a href="index.html">Planes & Precios</a>
+            <h4 data-i18n="footer.nav.title">Navegación</h4>
+            <a href="../index.html" data-i18n="nav.home">Inicio</a>
+            <a href="../index.html#showcase" data-i18n="footer.nav.showcase">App Showcase</a>
+            <a href="../index.html#features" data-i18n="footer.nav.features">Características</a>
+            <a href="../index.html#download" data-i18n="footer.nav.download">Descargar App</a>
           </div>
           <div class="link-group">
-            <h4>Legal</h4>
-            <a href="../t_rminos_de_servicio/index.html">Términos de Servicio</a>
-            <a href="../pol_tica_de_privacidad/index.html">Privacidad</a>
+            <h4 data-i18n="footer.legal.title">Legal</h4>
+            <a href="../terminos-de-servicio/index.html" data-i18n="footer.legal.terms">Términos de Servicio</a>
+            <a href="../politica-de-privacidad/index.html" data-i18n="footer.legal.privacy">Política de Privacidad</a>
+            <a href="../politica-de-privacidad/index.html#cookies" data-i18n="footer.legal.cookies">Política de Cookies</a>
+          </div>
+          <div class="link-group">
+            <h4 data-i18n="footer.support.title">Contacto & Soporte</h4>
+            <a href="mailto:soporte@gigly.app" style="color: var(--primary-light)">soporte@gigly.app</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Gigly Inc. (Gigly). Todos los derechos reservados.</p>
+        <p data-i18n="footer.copyright">&copy; 2026 Gigly Inc. (Gigly). Todos los derechos reservados.</p>
       </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="../i18n.js"></script>
     <script src="../app.js"></script>
   </body>
 </html>
