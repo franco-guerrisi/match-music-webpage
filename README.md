@@ -12,9 +12,10 @@ Gigly is the ultimate platform for live music discovery, band management, and pr
 
 ## 📁 Project Structure
 - `index.html` - Main landing page and interactive showcase
-- `planes/index.html` - Pricing and feature comparison matrix
+- `planes/index.html` - Pricing plans, high-contrast FAQ accordion, and feature comparison matrix
 - `terminos-de-servicio/index.html` - Official Terms of Service and EULA agreement
 - `politica-de-privacidad/index.html` - Privacy Policy, PostGIS geolocation disclosures, and GDPR rights
+- `politica-de-cookies/index.html` - Dedicated Cookie Policy, technical storage disclosures, and zero ad tracking
 - `verify-email.html` - Account verification screen
 - `i18n.js` - Internationalization controller and translation dictionaries
 - `app.js` - Showcase controller, pricing toggle, and interactive accordions
