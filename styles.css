@@ -1050,80 +1050,226 @@ h4,
   font-weight: bold;
 }
 
-/* Feature Matrix Table */
-.matrix-section {
-  margin-top: 60px;
+/* ======================================================
+   FEATURE COMPARISON TABLE (PREMIUM GLASS MATRIX)
+   ====================================================== */
+.comparison-table-section {
+  max-width: 1050px;
+  margin: 100px auto 0;
 }
 
-.table-responsive {
+.table-wrapper {
   overflow-x: auto;
-  border-radius: 20px;
+  border-radius: 24px;
+  background: rgba(22, 14, 10, 0.75);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(234, 88, 12, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.matrix-table {
+.comparison-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  background: var(--surface);
-  backdrop-filter: var(--blur);
 }
 
-.matrix-table th,
-.matrix-table td {
-  padding: 18px 24px;
+.comparison-table thead th {
+  padding: 24px 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(35, 22, 16, 0.95);
+  border-bottom: 2px solid rgba(234, 88, 12, 0.3);
+  letter-spacing: -0.2px;
+}
+
+.comparison-table thead th.highlight-col {
+  background: linear-gradient(180deg, rgba(234, 88, 12, 0.22) 0%, rgba(35, 22, 16, 0.9) 100%);
+  color: #fb923c;
+  font-size: 1.25rem;
+  font-weight: 800;
+  border-bottom: 2px solid var(--primary);
+  position: relative;
+}
+
+.comparison-table tbody tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease;
 }
 
-.matrix-table th {
-  font-family: "Outfit", sans-serif;
-  font-size: 1.1rem;
-  color: #fff;
-  background: rgba(40, 25, 20, 0.8);
+.comparison-table tbody tr:last-child {
+  border-bottom: none;
 }
 
-.matrix-table td:nth-child(2),
-.matrix-table td:nth-child(3),
-.matrix-table th:nth-child(2),
-.matrix-table th:nth-child(3) {
+.comparison-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.comparison-table tbody td {
+  padding: 20px 28px;
+  color: #f3f4f6;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.comparison-table td.highlight-col {
+  background: rgba(234, 88, 12, 0.06);
+  border-left: 1px solid rgba(234, 88, 12, 0.15);
+  border-right: 1px solid rgba(234, 88, 12, 0.15);
+}
+
+.comparison-table td:nth-child(2),
+.comparison-table td:nth-child(3),
+.comparison-table th:nth-child(2),
+.comparison-table th:nth-child(3) {
   text-align: center;
   width: 22%;
 }
 
-.matrix-table tr:hover {
-  background: rgba(255, 255, 255, 0.02);
+/* Table Check / Cross Badges */
+.table-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-/* FAQ Accordion */
-.faq-section {
-  max-width: 860px;
-  margin: 80px auto 0;
+.table-check.pro {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.25), rgba(251, 146, 60, 0.15));
+  color: #fb923c;
+  border: 1px solid rgba(234, 88, 12, 0.5);
+  box-shadow: 0 0 12px rgba(234, 88, 12, 0.3);
+}
+
+.table-cross {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ======================================================
+   FREQUENTLY ASKED QUESTIONS (HIGH-CONTRAST ACCORDION)
+   ====================================================== */
+.pricing-faq-section {
+  max-width: 900px;
+  margin: 100px auto 40px;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .faq-item {
-  border-radius: 16px;
-  margin-bottom: 16px;
+  border-radius: 20px;
+  background: rgba(24, 16, 12, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+}
+
+.faq-item:hover {
+  border-color: rgba(234, 88, 12, 0.4);
+  background: rgba(30, 20, 15, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.12);
+}
+
+.faq-item.active {
+  border-color: var(--primary-light);
+  background: linear-gradient(135deg, rgba(38, 24, 18, 0.95) 0%, rgba(22, 14, 10, 0.98) 100%);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.18), 0 0 15px rgba(234, 88, 12, 0.1);
 }
 
 .faq-question {
-  padding: 20px 24px;
+  width: 100%;
+  padding: 24px 28px;
+  background: none;
+  border: none;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #fff;
+  text-align: left;
+  gap: 20px;
   user-select: none;
+}
+
+.faq-question span:first-child {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  line-height: 1.45;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.faq-question .material-symbols-rounded {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.faq-item:hover .faq-question .material-symbols-rounded {
+  background: rgba(234, 88, 12, 0.2);
+  color: #ffffff;
+  border-color: rgba(234, 88, 12, 0.4);
+}
+
+.faq-item.active .faq-question span:first-child {
+  color: #ffffff;
+}
+
+.faq-item.active .faq-question .material-symbols-rounded {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 2px 10px rgba(234, 88, 12, 0.5);
+  transform: rotate(180deg);
 }
 
 .faq-answer {
   display: none;
-  padding: 0 24px 20px;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  padding: 0 28px 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: -4px;
+  padding-top: 18px;
+}
+
+.faq-answer p {
+  color: #e2e8f0;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 .faq-item.active .faq-answer {

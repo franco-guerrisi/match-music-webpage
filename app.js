@@ -228,12 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach((item, index) => {
     const question = item.querySelector('.faq-question');
-    const icon = item.querySelector('.material-symbols-rounded');
 
     // Open the first item by default
     if (index === 0) {
       item.classList.add('active');
-      if (icon) icon.textContent = 'expand_less';
     }
 
     if (question) {
@@ -243,14 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close all
         faqItems.forEach((f) => {
           f.classList.remove('active');
-          const fIcon = f.querySelector('.material-symbols-rounded');
-          if (fIcon) fIcon.textContent = 'expand_more';
         });
 
         // Toggle clicked
         if (!isActive) {
           item.classList.add('active');
-          if (icon) icon.textContent = 'expand_less';
         }
       });
     }
