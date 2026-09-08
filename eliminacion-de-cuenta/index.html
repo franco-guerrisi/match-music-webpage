@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliminación de Cuenta y Datos - Gigly</title>
+  <meta name="description"
+    content="Instrucciones y política para la eliminación de cuenta y borrado de datos de usuario en la aplicación Gigly (Google Play / App Store)." />
+
+  <!-- SEO & Canonical -->
+  <link rel="canonical" href="https://gigly-app.com/eliminacion-de-cuenta/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gigly-app.com/eliminacion-de-cuenta/" />
+  <meta property="og:title" content="Eliminación de Cuenta y Datos - Gigly" />
+  <meta property="og:description"
+    content="Solicitud y procedimiento para el borrado definitivo de cuentas y datos personales en la app Gigly." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .deletion-card {
+      background: rgba(28, 28, 30, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(12px);
+    }
+    .deletion-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step-number {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 18px;
+      text-align: left;
+    }
+    .data-table th {
+      background: rgba(234, 88, 12, 0.15);
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+    .data-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .tag-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .tag-deleted {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .tag-retained {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar glass">
+    <div class="nav-content">
+      <a href="../index.html" class="logo">
+        <span class="material-symbols-rounded logo-icon">graphic_eq</span>
+        Gigly
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" data-i18n="nav.home">Inicio</a>
+        <a href="../index.html#showcase" data-i18n="nav.showcase">App Showcase</a>
+        <a href="../planes/index.html" data-i18n="nav.pricing">Planes & Precios</a>
+        <a href="../politica-de-privacidad/index.html" data-i18n="footer.legal.privacy">Política de Privacidad</a>
+      </div>
+      <div class="nav-actions">
+        <!-- Language Switcher (ES / EN) -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="../index.html#download" class="btn btn-primary" data-i18n="nav.download">Descargar App</a>
+      </div>
+      <button class="menu-btn material-symbols-rounded" aria-label="Abrir menú">menu</button>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="legal-hero">
+    <div class="hero-background"></div>
+    <div class="legal-hero-content fade-up">
+      <div class="badge">Google Play & App Store Compliance</div>
+      <h1 class="hero-title" style="font-size: 2.8rem; margin-top: 10px;">
+        <span class="lang-es">Eliminación de Cuenta y Datos de Usuario</span>
+        <span class="lang-en" style="display: none;">Account & User Data Deletion</span>
+      </h1>
+      <p class="hero-subtitle" style="margin: 0 auto; max-width: 760px;">
+        <span class="lang-es">Transparencia absoluta en el manejo de tu información. Conoce cómo solicitar el borrado permanente de tu cuenta en la app <strong>Gigly</strong> (desarrollada por Franco Guerrisi / Gigly Inc.), qué datos se eliminan y cuáles se conservan por requerimiento legal.</span>
+        <span class="lang-en" style="display: none;">Complete transparency over your data. Learn how to request permanent deletion of your account in the <strong>Gigly</strong> mobile application (developed by Franco Guerrisi / Gigly Inc.), what data is erased, and what is retained by law.</span>
+      </p>
+      <div class="legal-meta">
+        <span class="material-symbols-rounded" style="font-size: 1.1rem; color: var(--primary-light)">verified_user</span>
+        <span>App: <strong>Gigly - Musicians Community</strong> (com.gigly.app) | Desarrollador: <strong>Gigly Inc.</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="legal-layout-container" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+
+    <!-- ==========================================
+         SPANISH CONTENT
+         ========================================== -->
+    <div class="lang-es">
+
+      <!-- Box: Identificación de la App -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 12px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">info</span>
+          Identificación de la Aplicación y Desarrollador
+        </h2>
+        <p class="legal-text">
+          Esta política aplica a la aplicación móvil <strong>Gigly - Musicians Community</strong> (identificador de paquete: <code>com.gigly.app</code>), desarrollada y operada por <strong>Franco Guerrisi / Gigly Inc.</strong> En cumplimiento estricto de las directrices de seguridad de datos de <strong>Google Play Console</strong> y <strong>Apple App Store</strong>, proporcionamos mecanismos claros y directos tanto dentro de la app como vía web para solicitar la baja total de tu cuenta y datos asociados.
+        </p>
+      </div>
+
+      <!-- Box: Métodos para solicitar la eliminación -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 20px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">delete_forever</span>
+          Pasos para Solicitar la Eliminación de tu Cuenta
+        </h2>
+        
+        <h3 style="color: var(--primary-light); margin-bottom: 16px;">Opción 1: Eliminación directa desde la Aplicación Móvil (Recomendado)</h3>
+        <p class="legal-text" style="margin-bottom: 16px;">Si tienes instalada la app Gigly en tu teléfono Android o iOS, puedes eliminar tu cuenta inmediatamente:</p>
+
+        <div class="deletion-step">
+          <div class="step-number">1</div>
+          <div>
+            <strong>Abre la app Gigly e inicia sesión</strong> con tus credenciales.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">2</div>
+          <div>
+            Toca el icono de tu <strong>Perfil</strong> en la barra de navegación inferior.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">3</div>
+          <div>
+            Toca el icono de <strong>Ajustes / Configuración</strong> (rueda de engranaje) en la esquina superior derecha.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">4</div>
+          <div>
+            Selecciona <strong>Información de la Cuenta</strong> y desliza hasta el final donde encontrarás el botón rojo <strong>Eliminar cuenta</strong>.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">5</div>
+          <div>
+            Confirma tu contraseña y presiona <strong>Confirmar eliminación definitiva</strong>. El sistema desconectará tu sesión y procesará la baja automática en la base de datos.
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+        <h3 style="color: var(--primary-light); margin-bottom: 16px;">Opción 2: Solicitud vía Web o Correo (Sin necesidad de reinstalar la app)</h3>
+        <p class="legal-text" style="margin-bottom: 16px;">Si desinstalaste la aplicación o no puedes acceder a tu dispositivo, puedes enviar una solicitud formal por escrito:</p>
+
+        <div class="deletion-step">
+          <div class="step-number"><span class="material-symbols-rounded" style="font-size: 1.2rem;">mail</span></div>
+          <div>
+            <strong>Envía un correo electrónico a nuestro equipo de privacidad:</strong><br>
+            Destinatario: <a href="mailto:privacy@gigly-app.com" style="color: var(--primary-light); font-weight: 600;">privacy@gigly-app.com</a> (o <a href="mailto:support@gigly-app.com" style="color: var(--primary-light);">support@gigly-app.com</a>)<br>
+            Asunto: <code>Solicitud de Eliminación de Cuenta y Datos - Gigly</code><br>
+            Cuerpo del mensaje: Indica la dirección de correo electrónico vinculada a tu cuenta de Gigly y tu nombre de usuario o nombre artístico.
+          </div>
+        </div>
+        <div style="margin-top: 16px;">
+          <a href="mailto:privacy@gigly-app.com?subject=Solicitud%20de%20Eliminaci%C3%B3n%20de%20Cuenta%20y%20Datos%20-%20Gigly&body=Hola%20equipo%20de%20Gigly%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20definitiva%20de%20mi%20cuenta%20y%20todos%20mis%20datos%20asociados%20en%20la%20app%20Gigly.%0A%0ACorreo%20registrado%3A%20%0ANombre%20de%20usuario%20o%20art%C3%ADstico%3A%20%0A%0AGracias." 
+             class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-rounded">send</span>
+            Enviar Solicitud de Eliminación por Email
+          </a>
+        </div>
+        <p class="legal-text" style="margin-top: 14px; font-size: 0.88rem; color: #a1a1aa;">
+          <em>Plazo de procesamiento:</em> Las solicitudes recibidas por correo electrónico se verifican y ejecutan en un plazo máximo de <strong>48 a 72 horas hábiles</strong>, enviándote una confirmación al mismo correo.
+        </p>
+      </div>
+
+      <!-- Box: Tabla de Datos eliminados vs conservados -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 12px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">checklist</span>
+          Tipos de Datos que se Borran y Datos que se Conservan
+        </h2>
+        <p class="legal-text">
+          En cumplimiento del principio de minimización de datos y el RGPD, a continuación se detallan las categorías de datos, el tratamiento aplicado y los períodos de retención:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Categoría de Datos</th>
+              <th>Estado</th>
+              <th>Detalle del Tratamiento y Retención</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Credenciales de Cuenta</strong><br><small>(Email, contraseña encriptada, tokens de sesión, ID de usuario)</small></td>
+              <td><span class="tag-badge tag-deleted">Borrado Total</span></td>
+              <td>Se eliminan permanentemente de la base de datos en un plazo menor a 48 horas. No se conservan copias de contraseñas ni emails asociados.</td>
+            </tr>
+            <tr>
+              <td><strong>Perfil Artístico y Musical</strong><br><small>(Nombre de artista, biografía, instrumentos, géneros, enlaces de Spotify/YouTube, equipamiento)</small></td>
+              <td><span class="tag-badge tag-deleted">Borrado Total</span></td>
+              <td>Se suprimen de forma irreversible. Tu perfil deja de ser visible inmediatamente para el resto de la comunidad.</td>
+            </tr>
+            <tr>
+              <td><strong>Archivos Multimedia</strong><br><small>(Fotos de perfil, flyers de eventos, audiciones y notas de voz)</small></td>
+              <td><span class="tag-badge tag-deleted">Borrado Total</span></td>
+              <td>Se eliminan físicamente de los servidores de almacenamiento de medios en la nube.</td>
+            </tr>
+            <tr>
+              <td><strong>Mensajes y Chats</strong><br><small>(Mensajes de texto en chats individuales y de bandas)</small></td>
+              <td><span class="tag-badge tag-deleted">Borrado Total</span></td>
+              <td>Se eliminan de los buzones personales. En chats grupales los mensajes se desvinculan de tu identidad personal.</td>
+            </tr>
+            <tr>
+              <td><strong>Tokens de Notificaciones Push</strong><br><small>(FCM / APNs device tokens)</small></td>
+              <td><span class="tag-badge tag-deleted">Borrado Total</span></td>
+              <td>Se revocan y purgan de inmediato, cesando cualquier envío de notificaciones.</td>
+            </tr>
+            <tr>
+              <td><strong>Historial de Compras y Facturación</strong><br><small>(Suscripciones Gigly PRO, promociones de eventos)</small></td>
+              <td><span class="tag-badge tag-retained">Retención Legal</span></td>
+              <td><strong>Retenido por obligación fiscal:</strong> Los recibos y registros de transacciones se conservan durante el período legal obligatorio exigido por las normativas tributarias (hasta 5 años). <em>No se almacenan números de tarjeta (gestionados exclusivamente por Google Play Billing / Stripe).</em></td>
+            </tr>
+            <tr>
+              <td><strong>Logs Técnicos y de Seguridad</strong><br><small>(Registros anónimos de errores de red y prevención de abuso)</small></td>
+              <td><span class="tag-badge tag-retained">Retención Temporal</span></td>
+              <td>Conservados de forma disociada (sin vincular a tu identidad) durante un máximo de <strong>90 días</strong> exclusivamente para protección contra fraudes y estabilidad del servidor.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- ==========================================
+         ENGLISH CONTENT
+         ========================================== -->
+    <div class="lang-en" style="display: none;">
+
+      <!-- Box: App Identification -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 12px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">info</span>
+          App & Developer Identification
+        </h2>
+        <p class="legal-text">
+          This policy applies to the mobile application <strong>Gigly - Musicians Community</strong> (package name: <code>com.gigly.app</code>), developed and operated by <strong>Franco Guerrisi / Gigly Inc.</strong> In strict compliance with <strong>Google Play Console</strong> and <strong>Apple App Store</strong> data safety guidelines, we provide direct, transparent options both within the app and via the web to request the complete deletion of your account and personal data.
+        </p>
+      </div>
+
+      <!-- Box: Steps to Request Account Deletion -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 20px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">delete_forever</span>
+          Steps to Request Account and Data Deletion
+        </h2>
+        
+        <h3 style="color: var(--primary-light); margin-bottom: 16px;">Option 1: Direct In-App Deletion (Recommended)</h3>
+        <p class="legal-text" style="margin-bottom: 16px;">If you have the Gigly app installed on your Android or iOS device, you can delete your account instantly:</p>
+
+        <div class="deletion-step">
+          <div class="step-number">1</div>
+          <div>
+            <strong>Open the Gigly app and sign in</strong> to your account.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">2</div>
+          <div>
+            Tap your <strong>Profile</strong> icon on the bottom navigation bar.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">3</div>
+          <div>
+            Tap the <strong>Settings</strong> icon (gear wheel) in the top-right corner.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">4</div>
+          <div>
+            Select <strong>Account Information</strong> and scroll down to the red <strong>Delete Account</strong> button.
+          </div>
+        </div>
+        <div class="deletion-step">
+          <div class="step-number">5</div>
+          <div>
+            Confirm your password and tap <strong>Confirm Permanent Deletion</strong>. The session will disconnect and all user data will be purged.
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+        <h3 style="color: var(--primary-light); margin-bottom: 16px;">Option 2: Web / Email Request (Without reinstalling the app)</h3>
+        <p class="legal-text" style="margin-bottom: 16px;">If you uninstalled the application or cannot access your mobile device, submit a written request:</p>
+
+        <div class="deletion-step">
+          <div class="step-number"><span class="material-symbols-rounded" style="font-size: 1.2rem;">mail</span></div>
+          <div>
+            <strong>Send an email to our data privacy team:</strong><br>
+            Recipient: <a href="mailto:privacy@gigly-app.com" style="color: var(--primary-light); font-weight: 600;">privacy@gigly-app.com</a> (or <a href="mailto:support@gigly-app.com" style="color: var(--primary-light);">support@gigly-app.com</a>)<br>
+            Subject: <code>Account & Data Deletion Request - Gigly</code><br>
+            Body: State your registered email address and your username or stage name.
+          </div>
+        </div>
+        <div style="margin-top: 16px;">
+          <a href="mailto:privacy@gigly-app.com?subject=Account%20and%20Data%20Deletion%20Request%20-%20Gigly&body=Hello%20Gigly%20Team%2C%0A%0AI%20am%20requesting%20the%20permanent%20deletion%20of%20my%20account%20and%20all%20associated%20personal%20data%20in%20the%20Gigly%20app.%0A%0ARegistered%20Email%3A%20%0AUsername%20%2F%20Artist%20Name%3A%20%0A%0AThank%20you." 
+             class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-rounded">send</span>
+            Send Deletion Request via Email
+          </a>
+        </div>
+        <p class="legal-text" style="margin-top: 14px; font-size: 0.88rem; color: #a1a1aa;">
+          <em>Processing turnaround:</em> Email deletion requests are verified and executed within <strong>48 to 72 business hours</strong>, with a confirmation email sent back to you.
+        </p>
+      </div>
+
+      <!-- Box: Table of Data Deleted vs Retained -->
+      <div class="deletion-card">
+        <h2 style="display: flex; align-items: center; gap: 10px; color: #fff; margin-bottom: 12px;">
+          <span class="material-symbols-rounded" style="color: var(--primary)">checklist</span>
+          Types of Data Deleted vs Retained
+        </h2>
+        <p class="legal-text">
+          In adherence to the GDPR data minimization principle, below is the comprehensive breakdown of data categories, treatment, and retention schedules:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>Status</th>
+              <th>Handling & Retention Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Account Credentials</strong><br><small>(Email, hashed password, session tokens, user ID)</small></td>
+              <td><span class="tag-badge tag-deleted">Permanently Erased</span></td>
+              <td>Purged from active databases within 48 hours. No credential copies are kept.</td>
+            </tr>
+            <tr>
+              <td><strong>Musician Profile</strong><br><small>(Artist name, bio, instruments, genres, Spotify/YouTube links, gear)</small></td>
+              <td><span class="tag-badge tag-deleted">Permanently Erased</span></td>
+              <td>Irreversibly deleted. Profile disappears immediately from musician searches and directories.</td>
+            </tr>
+            <tr>
+              <td><strong>Media Uploads</strong><br><small>(Avatars, event flyers, audition audio notes)</small></td>
+              <td><span class="tag-badge tag-deleted">Permanently Erased</span></td>
+              <td>Physically deleted from cloud media storage buckets.</td>
+            </tr>
+            <tr>
+              <td><strong>Messages & Chats</strong><br><small>(Text messages in private & band inboxes)</small></td>
+              <td><span class="tag-badge tag-deleted">Permanently Erased</span></td>
+              <td>Removed from user inboxes. Group messages are disassociated from personal identity.</td>
+            </tr>
+            <tr>
+              <td><strong>Push Notification Tokens</strong><br><small>(FCM / APNs device tokens)</small></td>
+              <td><span class="tag-badge tag-deleted">Permanently Erased</span></td>
+              <td>Revoked and deleted immediately; all push notifications cease.</td>
+            </tr>
+            <tr>
+              <td><strong>Billing & Purchase Records</strong><br><small>(Gigly PRO subscriptions, event promotions)</small></td>
+              <td><span class="tag-badge tag-retained">Legal Retention</span></td>
+              <td><strong>Retained under financial regulations:</strong> Transaction receipts are retained for the statutory period required by tax laws (up to 5 years). <em>Card numbers are never held by Gigly (processed solely by Google Play Billing / Stripe).</em></td>
+            </tr>
+            <tr>
+              <td><strong>Technical Security Logs</strong><br><small>(Anonymous network error logs and abuse defense)</small></td>
+              <td><span class="tag-badge tag-retained">Temporary Retention</span></td>
+              <td>Retained in disassociated/anonymized form for up to <strong>90 days</strong> strictly for platform defense against DDoS and fraud.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-symbols-rounded logo-icon">graphic_eq</span>
+          Gigly
+        </div>
+        <p>Construido para el ritmo de la industria musical independiente.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Legal</h4>
+          <a href="../terminos-de-servicio/index.html">Términos de Servicio</a>
+          <a href="../politica-de-privacidad/index.html">Política de Privacidad</a>
+          <a href="index.html" style="color: var(--primary-light)">Eliminación de Cuenta</a>
+        </div>
+        <div class="link-group">
+          <h4>Contacto & Soporte</h4>
+          <a href="mailto:privacy@gigly-app.com" style="color: var(--primary-light)">privacy@gigly-app.com</a>
+          <a href="mailto:support@gigly-app.com">support@gigly-app.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gigly Inc. (Gigly - Musicians Community). Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Language Switcher Script -->
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const esBlocks = document.querySelectorAll('.lang-es');
+    const enBlocks = document.querySelectorAll('.lang-en');
+
+    function setLanguage(lang) {
+      if (lang === 'en') {
+        esBlocks.forEach(el => el.style.display = 'none');
+        enBlocks.forEach(el => el.style.display = 'block');
+        langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === 'en'));
+        document.documentElement.lang = 'en';
+      } else {
+        enBlocks.forEach(el => el.style.display = 'none');
+        esBlocks.forEach(el => el.style.display = 'block');
+        langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === 'es'));
+        document.documentElement.lang = 'es';
+      }
+      try { localStorage.setItem('gigly_lang', lang); } catch (e) {}
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    // Initial check from localStorage or URL hash
+    try {
+      const saved = localStorage.getItem('gigly_lang');
+      if (saved === 'en' || window.location.hash === '#en') {
+        setLanguage('en');
+      }
+    } catch (e) {}
+  </script>
+</body>
+
+</html>

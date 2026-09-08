@@ -52,6 +52,22 @@
       "destination": "/politica-de-privacidad/index.html"
     },
     {
+      "source": "/delete-account",
+      "destination": "/eliminacion-de-cuenta/index.html"
+    },
+    {
+      "source": "/eliminacion-de-datos",
+      "destination": "/eliminacion-de-cuenta/index.html"
+    },
+    {
+      "source": "/data-deletion",
+      "destination": "/eliminacion-de-cuenta/index.html"
+    },
+    {
+      "source": "/eliminacion-de-cuenta",
+      "destination": "/eliminacion-de-cuenta/index.html"
+    },
+    {
       "source": "/cookies",
       "destination": "/politica-de-cookies/index.html"
     },
