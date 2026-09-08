@@ -161,7 +161,7 @@ const GIGLY_TRANSLATIONS = {
     'footer.legal.privacy': 'Política de Privacidad',
     'footer.legal.cookies': 'Política de Cookies',
     'footer.support.title': 'Contacto & Soporte',
-    'footer.support.email': 'soporte@gigly.app',
+    'footer.support.email': 'support@gigly-app.com',
     'footer.copyright': '© 2026 Gigly Inc. (Gigly). Todos los derechos reservados.',
   },
 
