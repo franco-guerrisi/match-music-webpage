@@ -1,0 +1,22 @@
+/t_rminos_de_servicio/* /terminos-de-servicio 301
+/t_rminos_de_servicio /terminos-de-servicio 301
+/pol_tica_de_privacidad/* /politica-de-privacidad 301
+/pol_tica_de_privacidad /politica-de-privacidad 301
+
+/verify-email /verify-email.html 200
+/terminos /terminos-de-servicio/index.html 200
+/terms /terminos-de-servicio/index.html 200
+/terms-of-service /terminos-de-servicio/index.html 200
+/privacidad /politica-de-privacidad/index.html 200
+/privacy /politica-de-privacidad/index.html 200
+/privacy-policy /politica-de-privacidad/index.html 200
+/delete-account /eliminacion-de-cuenta/index.html 200
+/eliminacion-de-datos /eliminacion-de-cuenta/index.html 200
+/data-deletion /eliminacion-de-cuenta/index.html 200
+/eliminacion-de-cuenta /eliminacion-de-cuenta/index.html 200
+/cookies /politica-de-cookies/index.html 200
+/cookie-policy /politica-de-cookies/index.html 200
+/politica-de-cookies /politica-de-cookies/index.html 200
+/planes /planes/index.html 200
+/pricing /planes/index.html 200
+/event/:id https://match-music-backend-production.up.railway.app/api/events/share/:id 302

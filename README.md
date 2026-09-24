@@ -20,7 +20,9 @@ Gigly is the ultimate platform for live music discovery, band management, and pr
 - `i18n.js` - Internationalization controller and translation dictionaries
 - `app.js` - Showcase controller, pricing toggle, and interactive accordions
 - `styles.css` - Unified design system tokens and glassmorphism styling
-- `vercel.json` - Clean URLs, 301 redirects from legacy paths, and short aliases
+- `wrangler.jsonc` - Cloudflare Workers deployment configuration (Static Assets)
+- `_redirects` - Cloudflare canonical 301 redirects, clean URLs, and reverse proxy for event sharing
+- `_headers` - Cloudflare HTTP headers for deep linking (.well-known)
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
