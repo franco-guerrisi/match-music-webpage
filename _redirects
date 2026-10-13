@@ -19,4 +19,7 @@
 /politica-de-cookies /politica-de-cookies/index.html 200
 /planes /planes/index.html 200
 /pricing /planes/index.html 200
+/ayuda /ayuda/index.html 200
+/help /ayuda/index.html 200
+/help-center /ayuda/index.html 200
 /event/:id https://match-music-backend-production.up.railway.app/api/events/share/:id 302
