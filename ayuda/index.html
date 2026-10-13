@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Centro de Ayuda - Gigly</title>
+  <title>Centro de Ayuda - Gigly | Guías y Soporte Oficial</title>
   <meta name="description"
-    content="Centro de Ayuda, guías de uso, tutoriales y preguntas frecuentes para músicos, bandas y organizadores en Gigly." />
+    content="Centro de Ayuda, guías oficiales, tutoriales y soporte técnico para músicos, bandas y organizadores en Gigly." />
 
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://gigly-app.com/ayuda/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gigly-app.com/ayuda/" />
-  <meta property="og:title" content="Centro de Ayuda - Gigly" />
+  <meta property="og:title" content="Centro de Ayuda - Gigly | Guías y Soporte Oficial" />
   <meta property="og:description"
     content="Guías de uso, tutoriales paso a paso y preguntas frecuentes de la plataforma Gigly." />
 
@@ -23,221 +23,615 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <!-- Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+  <!-- Icons (Monochrome Symbols) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
     rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
+    /* ========================================================
+       GIGLY STUDIO IDENTITY & HELP CENTER DESIGN SYSTEM
+       ======================================================== */
+    :root {
+      --primary: #ea580c;
+      --primary-light: #fb923c;
+      --primary-dark: #c2410c;
+      --bg-color: #0f0a08;
+      --surface-studio: rgba(22, 14, 11, 0.72);
+      --surface-card: rgba(26, 17, 13, 0.55);
+      --surface-card-hover: rgba(36, 23, 17, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --border-accent: rgba(234, 88, 12, 0.22);
+      --text-muted: #94a3b8;
+      --text-dim: #71717a;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient Hero Background Glow */
+    .help-ambient-glow {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1100px;
+      height: 540px;
+      background: radial-gradient(circle at 50% 30%, rgba(234, 88, 12, 0.16) 0%, rgba(194, 65, 12, 0.04) 50%, transparent 75%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .help-hero {
-      padding: 120px 20px 40px;
+      position: relative;
+      z-index: 1;
+      padding: 130px 24px 32px;
       text-align: center;
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto;
     }
-    .help-badge {
+
+    /* Studio Equalizer Animated Badge */
+    .studio-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(234, 88, 12, 0.15);
-      border: 1px solid rgba(234, 88, 12, 0.3);
-      color: #ea580c;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      gap: 10px;
+      background: rgba(234, 88, 12, 0.08);
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(234, 88, 12, 0.12);
     }
+
+    .eq-anim {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 13px;
+    }
+
+    .eq-bar {
+      width: 2.5px;
+      background: var(--primary-light);
+      border-radius: 1px;
+      animation: eq-bounce 1.1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    }
+    .eq-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 95%; animation-delay: 0.35s; }
+    .eq-bar:nth-child(3) { height: 60%; animation-delay: 0.15s; }
+    .eq-bar:nth-child(4) { height: 100%; animation-delay: 0.45s; }
+    .eq-bar:nth-child(5) { height: 50%; animation-delay: 0.2s; }
+
+    @keyframes eq-bounce {
+      0% { height: 25%; opacity: 0.6; }
+      100% { height: 100%; opacity: 1; }
+    }
+
     .help-title {
-      font-size: 2.5rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.3rem, 5vw, 3.4rem);
       font-weight: 800;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: #ffffff;
     }
+
     .help-desc {
-      color: #94a3b8;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 28px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin: 0 auto 34px;
     }
+
+    /* Studio Command Search Console */
     .search-wrapper {
       position: relative;
-      max-width: 600px;
-      margin: 0 auto 30px;
+      max-width: 660px;
+      margin: 0 auto 26px;
     }
+
     .search-input {
       width: 100%;
-      padding: 16px 20px 16px 52px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      color: #fff;
+      padding: 18px 48px 18px 52px;
+      border-radius: 16px;
+      border: 1px solid var(--border-accent);
+      background: rgba(18, 12, 9, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #ffffff;
       font-size: 1rem;
+      font-family: 'Inter', sans-serif;
       outline: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
     }
+
     .search-input:focus {
-      border-color: #ea580c;
-      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.28), 0 12px 36px rgba(0, 0, 0, 0.6);
+      background: rgba(24, 15, 11, 0.95);
     }
+
+    .search-input::placeholder {
+      color: var(--text-dim);
+    }
+
     .search-icon {
       position: absolute;
       left: 18px;
       top: 50%;
       transform: translateY(-50%);
-      color: #94a3b8;
+      color: var(--text-dim);
+      font-size: 22px;
       pointer-events: none;
+      transition: color 0.2s ease;
     }
+
+    .search-input:focus ~ .search-icon {
+      color: var(--primary-light);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      display: none;
+      padding: 4px;
+      border-radius: 50%;
+      transition: color 0.2s ease;
+    }
+
+    .search-clear:hover {
+      color: #ffffff;
+    }
+
+    /* Studio Rack Category Filter Pills */
     .filter-pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 40px;
+      gap: 10px;
+      margin-bottom: 34px;
     }
+
     .filter-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #94a3b8;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      background: rgba(28, 18, 14, 0.7);
+      border: 1px solid var(--border-subtle);
+      color: #cbd5e1;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .filter-pill:hover {
+      border-color: rgba(234, 88, 12, 0.35);
+      color: #ffffff;
+      background: rgba(38, 24, 18, 0.85);
+      transform: translateY(-1px);
+    }
+
+    .filter-pill.active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 18px rgba(234, 88, 12, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Live Search Feedback */
+    .search-feedback {
+      display: none;
+      text-align: center;
+      margin-bottom: 26px;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .search-feedback strong {
+      color: var(--primary-light);
+    }
+
+    /* Dedicated GitBook Documentation Banner */
+    .gitbook-card {
+      max-width: 900px;
+      margin: 0 auto 34px;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, rgba(32, 20, 15, 0.8) 0%, rgba(20, 13, 10, 0.9) 100%);
+      border: 1px solid rgba(234, 88, 12, 0.22);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .gitbook-card:hover {
+      border-color: rgba(234, 88, 12, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 38px rgba(234, 88, 12, 0.15);
+    }
+
+    .gitbook-card-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .gitbook-badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(234, 88, 12, 0.12);
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .gitbook-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .gitbook-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .gitbook-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
       transition: all 0.2s ease;
     }
-    .filter-pill:hover,
-    .filter-pill.active {
-      background: #ea580c;
-      color: #fff;
-      border-color: #ea580c;
+
+    .gitbook-card:hover .gitbook-action {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
     }
+
+    /* Main Container & Category Studio Cards */
     .help-container {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 20px 80px;
+      position: relative;
+      z-index: 1;
     }
+
     .category-card {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 24px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(10px);
+      background: var(--surface-studio);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 26px 28px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.2s ease;
     }
+
+    .category-card:hover {
+      border-color: rgba(234, 88, 12, 0.2);
+    }
+
+    /* Sleek Studio Header (No Colorful Toy Icons) */
     .category-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-      padding-bottom: 12px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .category-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(234, 88, 12, 0.15);
-      color: #ea580c;
+
+    .category-header-main {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 14px;
     }
-    .category-title {
-      font-size: 1.25rem;
+
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Outfit', monospace, sans-serif;
+      font-size: 0.74rem;
       font-weight: 700;
-      color: #fff;
-      margin: 0;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
     }
+
+    .channel-led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #71717a;
+      transition: all 0.25s ease;
+    }
+
+    .category-card:hover .channel-led {
+      background: var(--primary);
+      box-shadow: 0 0 6px rgba(234, 88, 12, 0.6);
+    }
+
+    .category-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .category-count {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    /* FAQ Items (Audio Console Rack Units) */
     .faq-accordion {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .faq-item {
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      border-left: 2px solid transparent;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--surface-card);
       overflow: hidden;
-      transition: all 0.2s ease;
+      transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
+
     .faq-item:hover {
-      border-color: rgba(234, 88, 12, 0.3);
+      border-color: rgba(234, 88, 12, 0.22);
+      border-left-color: rgba(234, 88, 12, 0.5);
+      background: var(--surface-card-hover);
     }
+
+    .faq-item.open {
+      border-left: 3px solid var(--primary);
+      border-color: rgba(234, 88, 12, 0.28);
+      background: rgba(32, 21, 16, 0.8);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
     .faq-question {
-      padding: 16px 20px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
       cursor: pointer;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
+      font-size: 1rem;
       color: #e2e8f0;
       user-select: none;
+      line-height: 1.45;
+      transition: color 0.2s ease;
     }
+
+    .faq-item.open .faq-question {
+      color: #ffffff;
+    }
+
     .faq-question .chevron {
-      color: #94a3b8;
-      transition: transform 0.2s ease;
+      color: var(--text-dim);
+      font-size: 22px;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+      flex-shrink: 0;
     }
+
     .faq-item.open .chevron {
       transform: rotate(180deg);
-      color: #ea580c;
+      color: var(--primary-light);
     }
+
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-      padding: 0 20px;
-      color: #94a3b8;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 22px;
+      color: var(--text-muted);
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.68;
     }
+
     .faq-item.open .faq-answer {
-      max-height: 600px;
-      padding: 0 20px 18px;
+      max-height: 800px;
+      padding: 0 22px 20px;
     }
-    .contact-card {
-      background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
-      border: 1px solid rgba(234, 88, 12, 0.25);
-      border-radius: 18px;
-      padding: 30px;
+
+    .faq-answer strong {
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .faq-answer em {
+      color: var(--primary-light);
+      font-style: normal;
+    }
+
+    /* No Search Results Card */
+    .no-results-card {
+      display: none;
       text-align: center;
-      margin-top: 40px;
+      padding: 48px 24px;
+      background: var(--surface-studio);
+      border: 1px dashed rgba(234, 88, 12, 0.3);
+      border-radius: 18px;
+      margin-bottom: 30px;
     }
-    .contact-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      color: #fff;
+
+    .no-results-card p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
     }
-    .contact-card p {
-      color: #94a3b8;
-      margin-bottom: 20px;
+
+    /* Contact & Support Section (Studio Helpdesk) */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(34, 21, 16, 0.9) 0%, rgba(20, 13, 10, 0.95) 100%);
+      border: 1px solid rgba(234, 88, 12, 0.28);
+      border-radius: 20px;
+      padding: 36px 30px;
+      text-align: center;
+      margin-top: 50px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
     }
-    .btn-contact {
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(234, 88, 12, 0.12) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .contact-meta-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #ea580c;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 12px;
+      gap: 6px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
       font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      background: rgba(234, 88, 12, 0.1);
+      border: 1px solid rgba(234, 88, 12, 0.2);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
     }
-    .btn-contact:hover {
-      background: #c2410c;
-      transform: translateY(-2px);
+
+    .contact-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .help-hero {
+        padding: 110px 20px 24px;
+      }
+      .gitbook-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: stretch;
+      }
+      .gitbook-card-left {
+        flex-direction: column;
+        text-align: center;
+      }
+      .gitbook-action {
+        justify-content: center;
+      }
+      .category-card {
+        padding: 20px 18px;
+      }
+      .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .category-count {
+        display: none;
+      }
+      .contact-card {
+        padding: 28px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Ambient Atmosphere Glow -->
+  <div class="help-ambient-glow"></div>
+
   <!-- Navigation -->
   <nav class="navbar glass">
     <div class="nav-content">
@@ -248,51 +642,91 @@
       <div class="nav-links">
         <a href="../index.html">Inicio</a>
         <a href="../index.html#features">Características</a>
-        <a href="../planes/index.html">Planes</a>
-        <a href="index.html" style="color: #ea580c; font-weight: 700;">Ayuda</a>
+        <a href="../planes/index.html">Planes & Precios</a>
+        <a href="index.html" style="color: var(--primary-light); font-weight: 700;">Ayuda</a>
       </div>
       <div class="nav-actions">
         <a href="../index.html#download" class="btn btn-primary">Descargar App</a>
       </div>
+      <button class="menu-btn material-symbols-rounded" aria-label="Abrir menú">menu</button>
     </div>
   </nav>
 
-  <!-- Hero & Buscador -->
+  <!-- Hero & Buscador Central -->
   <header class="help-hero">
-    <div class="help-badge">
-      <span class="material-symbols-rounded" style="font-size: 18px;">menu_book</span>
-      Documentación y Soporte Oficial
+    <div class="studio-badge">
+      <div class="eq-anim">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+      Base de Conocimiento & Soporte
     </div>
-    <h1 class="help-title">¿Cómo podemos ayudarte?</h1>
+    <h1 class="help-title">¿Cómo podemos <span class="text-gradient">ayudarte</span>?</h1>
     <p class="help-desc">
       Aprende el funcionamiento de Gigly: perfiles de músico, bandas colaborativas, agenda de conciertos, analíticas profesionales PRO y promociones de eventos.
     </p>
 
+    <!-- Studio Command Search Console -->
     <div class="search-wrapper">
       <span class="material-symbols-rounded search-icon">search</span>
-      <input type="text" id="helpSearch" class="search-input" placeholder="Buscar preguntas, guías o funciones (ej: Band Inbox, Spotify PRO, Transferir banda)..." autocomplete="off" />
+      <input type="text" id="helpSearch" class="search-input"
+        placeholder="Buscar preguntas o funciones (ej: Band Inbox, Spotify PRO, Transferir banda)..."
+        autocomplete="off" spellcheck="false" />
+      <button id="clearSearchBtn" class="search-clear material-symbols-rounded" aria-label="Limpiar búsqueda">close</button>
     </div>
 
-    <!-- Píldoras de filtro -->
+    <!-- Píldoras Selectoras de Categoría -->
     <div class="filter-pills" id="filterPills">
-      <button class="filter-pill active" data-category="all">Todos</button>
+      <button class="filter-pill active" data-category="all">Todos los temas</button>
       <button class="filter-pill" data-category="general">Primeros Pasos</button>
-      <button class="filter-pill" data-category="bands">Bandas</button>
-      <button class="filter-pill" data-category="events">Eventos</button>
+      <button class="filter-pill" data-category="bands">Gestión de Bandas</button>
+      <button class="filter-pill" data-category="events">Eventos y Conciertos</button>
       <button class="filter-pill" data-category="promotions">Promociones</button>
       <button class="filter-pill" data-category="pro">Gigly PRO</button>
     </div>
+
+    <!-- Search Live Counter Feedback -->
+    <div class="search-feedback" id="searchFeedback"></div>
   </header>
 
   <!-- Contenedor Principal de Categorías -->
   <main class="help-container" id="helpContent">
-    <!-- Categoría 1: Primeros Pasos -->
+
+    <!-- Tarjeta Directa al Manual GitBook -->
+    <a href="https://gigly-help-center.gitbook.io/gigly-help-center-docs/" target="_blank" rel="noopener noreferrer" class="gitbook-card">
+      <div class="gitbook-card-left">
+        <div class="gitbook-badge-icon material-symbols-rounded">menu_book</div>
+        <div>
+          <div class="gitbook-title">Manual Oficial en GitBook Docs</div>
+          <div class="gitbook-desc">¿Prefieres la guía completa interactiva por capítulos? Explora la documentación exhaustiva.</div>
+        </div>
+      </div>
+      <div class="gitbook-action">
+        <span>Abrir Docs</span>
+        <span class="material-symbols-rounded" style="font-size: 18px;">open_in_new</span>
+      </div>
+    </a>
+
+    <!-- Estado Sin Resultados de Búsqueda -->
+    <div class="no-results-card" id="noResultsCard">
+      <p>No se encontraron respuestas para tu búsqueda actual.</p>
+      <button id="resetSearchBtn" class="btn btn-store" style="font-size: 0.9rem;">Restablecer búsqueda</button>
+    </div>
+
+    <!-- Categoría 1: Primeros Pasos y Perfil -->
     <section class="category-card" data-category="general">
       <div class="category-header">
-        <div class="category-icon">
-          <span class="material-symbols-rounded">person</span>
+        <div class="category-header-main">
+          <div class="channel-badge">
+            <span class="channel-led"></span>
+            CH // 01
+          </div>
+          <h2 class="category-title">Primeros Pasos y Perfil de Músico</h2>
         </div>
-        <h2 class="category-title">Primeros Pasos y Perfil de Músico</h2>
+        <span class="category-count">3 guías</span>
       </div>
       <div class="faq-accordion">
         <div class="faq-item">
@@ -331,10 +765,14 @@
     <!-- Categoría 2: Bandas -->
     <section class="category-card" data-category="bands">
       <div class="category-header">
-        <div class="category-icon">
-          <span class="material-symbols-rounded">groups</span>
+        <div class="category-header-main">
+          <div class="channel-badge">
+            <span class="channel-led"></span>
+            CH // 02
+          </div>
+          <h2 class="category-title">Gestión de Bandas y Roles</h2>
         </div>
-        <h2 class="category-title">Gestión de Bandas y Roles</h2>
+        <span class="category-count">3 guías</span>
       </div>
       <div class="faq-accordion">
         <div class="faq-item">
@@ -373,10 +811,14 @@
     <!-- Categoría 3: Eventos -->
     <section class="category-card" data-category="events">
       <div class="category-header">
-        <div class="category-icon">
-          <span class="material-symbols-rounded">event</span>
+        <div class="category-header-main">
+          <div class="channel-badge">
+            <span class="channel-led"></span>
+            CH // 03
+          </div>
+          <h2 class="category-title">Eventos, Conciertos y Mapa</h2>
         </div>
-        <h2 class="category-title">Eventos, Conciertos y Mapa</h2>
+        <span class="category-count">3 guías</span>
       </div>
       <div class="faq-accordion">
         <div class="faq-item">
@@ -414,10 +856,14 @@
     <!-- Categoría 4: Promociones -->
     <section class="category-card" data-category="promotions">
       <div class="category-header">
-        <div class="category-icon">
-          <span class="material-symbols-rounded">campaign</span>
+        <div class="category-header-main">
+          <div class="channel-badge">
+            <span class="channel-led"></span>
+            CH // 04
+          </div>
+          <h2 class="category-title">Promoción y Algoritmo de Ranking</h2>
         </div>
-        <h2 class="category-title">Promoción y Algoritmo de Ranking</h2>
+        <span class="category-count">1 guía</span>
       </div>
       <div class="faq-accordion">
         <div class="faq-item">
@@ -428,7 +874,7 @@
           <div class="faq-answer">
             <strong>Básico:</strong> 100 puntos base y visibilidad en la ciudad del show.<br/>
             <strong>Intermedio:</strong> 200 puntos base con segmentación por géneros y ciudades adicionales.<br/>
-            <strong>Premium:</strong> 300 puntos base con máxima prioridad algorítmica y alcance extendido.<br/>
+            <strong>Premium:</strong> 300 puntos base con máxima prioridad algorítmica y alcance extendido.<br/><br/>
             La duración de los días contratados finaliza automáticamente cuando concluye el evento.
           </div>
         </div>
@@ -438,10 +884,14 @@
     <!-- Categoría 5: Gigly PRO -->
     <section class="category-card" data-category="pro">
       <div class="category-header">
-        <div class="category-icon">
-          <span class="material-symbols-rounded">analytics</span>
+        <div class="category-header-main">
+          <div class="channel-badge">
+            <span class="channel-led"></span>
+            CH // 05
+          </div>
+          <h2 class="category-title">Gigly PRO y Suite de Analíticas</h2>
         </div>
-        <h2 class="category-title">Gigly PRO y Suite de Analíticas</h2>
+        <span class="category-count">2 guías</span>
       </div>
       <div class="faq-accordion">
         <div class="faq-item">
@@ -474,18 +924,63 @@
       </div>
     </section>
 
-    <!-- Tarjeta de Contacto Directo -->
+    <!-- Tarjeta de Soporte Técnico Especializado -->
     <div class="contact-card">
-      <span class="material-symbols-rounded" style="font-size: 40px; color: #ea580c; margin-bottom: 8px;">support_agent</span>
+      <div class="contact-meta-badge">
+        <span class="material-symbols-rounded" style="font-size: 16px;">headset_mic</span>
+        Mesa de Ayuda para Artistas y Salas
+      </div>
       <h3>¿Tienes alguna consulta adicional?</h3>
-      <p>Nuestro equipo de soporte está listo para asistirte.</p>
-      <a href="mailto:support@gigly-app.com?subject=Consulta%20Soporte%20Gigly" class="btn-contact">
-        <span class="material-symbols-rounded">mail</span>
-        Escribir a Soporte Técnico
-      </a>
+      <p>Nuestro equipo de soporte técnico está disponible para asistirte con tu cuenta, banda o eventos.</p>
+      <div class="contact-actions">
+        <a href="mailto:support@gigly-app.com?subject=Consulta%20Soporte%20Gigly" class="btn btn-primary">
+          <span class="material-symbols-rounded">mail</span>
+          Escribir a Soporte Técnico
+        </a>
+        <a href="https://gigly-help-center.gitbook.io/gigly-help-center-docs/" target="_blank" rel="noopener noreferrer" class="btn btn-store">
+          <span class="material-symbols-rounded">open_in_new</span>
+          Ver Manual Completo
+        </a>
+      </div>
     </div>
   </main>
 
+  <!-- Footer Unificado Gigly -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-symbols-rounded logo-icon">graphic_eq</span>
+          Gigly
+        </div>
+        <p>Construido para el ritmo de la industria musical en vivo e independiente.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navegación</h4>
+          <a href="../index.html">Inicio</a>
+          <a href="../index.html#features">Características</a>
+          <a href="../planes/index.html">Planes & Precios</a>
+          <a href="index.html" style="color: var(--primary-light);">Centro de Ayuda</a>
+        </div>
+        <div class="link-group">
+          <h4>Legal</h4>
+          <a href="../terminos-de-servicio/index.html">Términos de Servicio</a>
+          <a href="../politica-de-privacidad/index.html">Política de Privacidad</a>
+          <a href="../politica-de-privacidad/index.html#cookies">Política de Cookies</a>
+        </div>
+        <div class="link-group">
+          <h4>Contacto</h4>
+          <a href="mailto:support@gigly-app.com" style="color: var(--primary-light);">support@gigly-app.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gigly Inc. (Gigly). Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Lógica Interactiva (Acordeones, Filtros y Búsqueda) -->
   <script>
     // Acordeón interactivo
     document.querySelectorAll('.faq-question').forEach(question => {
@@ -493,6 +988,7 @@
         const item = question.parentElement;
         const isOpen = item.classList.contains('open');
         
+        // Cierra otros dentro de la misma categoría para mantener foco limpio
         item.parentElement.querySelectorAll('.faq-item').forEach(other => {
           if (other !== item) other.classList.remove('open');
         });
@@ -504,16 +1000,30 @@
     // Filtro por píldoras
     const pills = document.querySelectorAll('.filter-pill');
     const cards = document.querySelectorAll('.category-card');
+    const searchInput = document.getElementById('helpSearch');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchFeedback = document.getElementById('searchFeedback');
+    const noResultsCard = document.getElementById('noResultsCard');
+    const resetSearchBtn = document.getElementById('resetSearchBtn');
 
     pills.forEach(pill => {
       pill.addEventListener('click', () => {
         pills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
 
+        // Si había búsqueda, limpiarla al cambiar de filtro
+        if (searchInput.value.trim() !== '') {
+          searchInput.value = '';
+          clearBtn.style.display = 'none';
+          searchFeedback.style.display = 'none';
+          noResultsCard.style.display = 'none';
+        }
+
         const cat = pill.dataset.category;
         cards.forEach(card => {
           if (cat === 'all' || card.dataset.category === cat) {
             card.style.display = 'block';
+            card.querySelectorAll('.faq-item').forEach(i => i.style.display = 'block');
           } else {
             card.style.display = 'none';
           }
@@ -522,30 +1032,72 @@
     });
 
     // Búsqueda en tiempo real
-    const searchInput = document.getElementById('helpSearch');
     searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase().trim();
-      
+      clearBtn.style.display = term ? 'block' : 'none';
+
+      let totalMatches = 0;
+
+      // Restablecer píldora activa a 'all' para buscar globalmente
+      if (term) {
+        pills.forEach(p => p.classList.remove('active'));
+        const allPill = document.querySelector('.filter-pill[data-category="all"]');
+        if (allPill) allPill.classList.add('active');
+      }
+
       document.querySelectorAll('.faq-item').forEach(item => {
         const text = item.textContent.toLowerCase();
-        if (text.includes(term)) {
+        if (!term || text.includes(term)) {
           item.style.display = 'block';
-          if (term.length > 2) item.classList.add('open');
+          if (term.length >= 2) {
+            item.classList.add('open');
+            totalMatches++;
+          }
         } else {
           item.style.display = 'none';
           item.classList.remove('open');
         }
       });
 
+      let visibleCategories = 0;
       cards.forEach(card => {
-        const visibleItems = card.querySelectorAll('.faq-item[style="display: block;"], .faq-item:not([style*="display: none"])');
+        const visibleItems = card.querySelectorAll('.faq-item:not([style*="display: none"])');
         if (term === '' || visibleItems.length > 0) {
           card.style.display = 'block';
+          visibleCategories++;
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (term.length >= 2) {
+        searchFeedback.style.display = 'block';
+        searchFeedback.innerHTML = `Se encontraron <strong>${totalMatches}</strong> respuestas para "<em>${term}</em>"`;
+        noResultsCard.style.display = (visibleCategories === 0) ? 'block' : 'none';
+      } else {
+        searchFeedback.style.display = 'none';
+        noResultsCard.style.display = 'none';
+      }
     });
+
+    // Limpiar búsqueda
+    const resetSearch = () => {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      searchFeedback.style.display = 'none';
+      noResultsCard.style.display = 'none';
+      cards.forEach(card => {
+        card.style.display = 'block';
+        card.querySelectorAll('.faq-item').forEach(i => {
+          i.style.display = 'block';
+          i.classList.remove('open');
+        });
+      });
+      searchInput.focus();
+    };
+
+    clearBtn.addEventListener('click', resetSearch);
+    resetSearchBtn.addEventListener('click', resetSearch);
   </script>
 </body>
 
