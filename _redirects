@@ -22,7 +22,7 @@
 /ayuda /ayuda/index.html 200
 /help /ayuda/index.html 200
 /help-center /ayuda/index.html 200
-/event/:id https://match-music-backend-production.up.railway.app/api/events/share/:id 302
+/event/:id https://match-music-backend-production.up.railway.app/api/events/share/:id 200
 
 # Deep link fallback pages (shown when app is NOT installed)
 /profile/:id /profile.html 200
