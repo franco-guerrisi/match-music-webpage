@@ -7,7 +7,9 @@
         "paths": [
           "/verify-email*",
           "/reset-password*",
-          "/event/*"
+          "/event/*",
+          "/profile/*",
+          "/band/*"
         ]
       }
     ]

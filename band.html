@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Banda - Gigly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --card-border: #27272a;
+      --primary: #ea580c;
+      --primary-hover: #f97316;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo { width: 120px; margin-bottom: 24px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    p { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 28px; }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      text-decoration: underline;
+      margin-top: 8px;
+    }
+    .badge { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .badge img { height: 40px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/assets/gigly-text-icon-orange.png" alt="Gigly" class="logo" onerror="this.style.display='none'">
+    <h1>Ver banda en Gigly</h1>
+    <p>Abre este perfil de banda directamente en la app de Gigly para escuchar su música y ver sus eventos.</p>
+
+    <a id="open-app-btn" class="btn" href="#">Abrir en la app →</a>
+
+    <div class="badge">
+      <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Google Play">
+      </a>
+    </div>
+    <a class="btn-secondary" href="https://gigly-app.com">Ir al sitio web</a>
+  </div>
+
+  <script>
+    // Extract band ID from URL: /band/456
+    var pathParts = window.location.pathname.split('/');
+    var bandId = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+
+    // Build deep link: gigly://band/456
+    var deepLink = 'gigly://band/' + bandId;
+
+    // Set the open-in-app button
+    var btn = document.getElementById('open-app-btn');
+    btn.href = deepLink;
+
+    // Try to open the app immediately on page load (works if app is installed)
+    setTimeout(function() {
+      window.location.href = deepLink;
+    }, 300);
+  </script>
+</body>
+</html>
