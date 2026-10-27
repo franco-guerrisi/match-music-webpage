@@ -272,4 +272,73 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ======================================================
+  // APP STORE "COMING SOON" MODAL HANDLER
+  // ======================================================
+  function openComingSoonModal() {
+    let backdrop = document.getElementById('appstore-coming-soon-modal');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'appstore-coming-soon-modal';
+      backdrop.className = 'coming-soon-modal-backdrop';
+      backdrop.innerHTML = `
+        <div class="coming-soon-card" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title">
+          <div class="coming-soon-icon">
+            <span class="material-symbols-rounded">phone_iphone</span>
+          </div>
+          <h3 id="cs-modal-title" data-i18n="appstore.modal.title">App Store · Próximamente</h3>
+          <p data-i18n="appstore.modal.desc">Estamos terminando los últimos detalles de la versión para iOS (iPhone y iPad). ¡Muy pronto estará disponible en Apple App Store! Mientras tanto, ya puedes descargar Gigly para Android en Google Play.</p>
+          <div class="coming-soon-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="appstore.modal.btn_playstore">
+              <span class="material-symbols-rounded">android</span>
+              <span>Descargar en Google Play</span>
+            </a>
+            <button type="button" class="coming-soon-close-btn" data-i18n="appstore.modal.close">Entendido</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(backdrop);
+
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) {
+          closeComingSoonModal();
+        }
+      });
+      const closeBtn = backdrop.querySelector('.coming-soon-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeComingSoonModal);
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+          closeComingSoonModal();
+        }
+      });
+    }
+
+    if (typeof GiglyI18n !== 'undefined') {
+      GiglyI18n.applyTranslations();
+    }
+
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeComingSoonModal() {
+    const backdrop = document.getElementById('appstore-coming-soon-modal');
+    if (backdrop) {
+      backdrop.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+  }
+
+  // Attach listener to all App Store buttons
+  document.addEventListener('click', (e) => {
+    const appStoreBtn = e.target.closest('.btn-appstore');
+    if (appStoreBtn) {
+      e.preventDefault();
+      openComingSoonModal();
+    }
+  });
 });
+

@@ -54,7 +54,7 @@
           <span class="lang-divider">|</span>
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="#download" class="btn btn-primary" data-i18n="nav.download">Descargar App</a>
+        <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="nav.download">Descargar App</a>
       </div>
       <button class="menu-btn material-symbols-rounded" aria-label="Abrir menú">menu</button>
     </div>
@@ -72,11 +72,14 @@
             class="text-gradient">ritmo</span> de Gigly.
         </p>
         <div class="hero-buttons">
-          <a href="#download" class="btn btn-store">
-            <span class="material-symbols-rounded">download</span>
-            <span data-i18n="hero.btn.appstore">App Store</span>
-          </a>
-          <a href="#download" class="btn btn-store">
+          <div class="store-btn-wrapper">
+            <button type="button" class="btn btn-store btn-appstore" aria-label="App Store (Próximamente)">
+              <span class="material-symbols-rounded">download</span>
+              <span data-i18n="hero.btn.appstore">App Store</span>
+              <span class="badge-coming-soon" data-i18n="appstore.badge">Próximamente</span>
+            </button>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank" rel="noopener noreferrer" class="btn btn-store" aria-label="Google Play">
             <span class="material-symbols-rounded">android</span>
             <span data-i18n="hero.btn.playstore">Google Play</span>
           </a>
@@ -333,10 +336,17 @@
         de músicos y bandas locales.
       </p>
       <div class="hero-buttons cta-buttons">
-        <a href="#" class="btn btn-primary cta-primary-btn" style="padding: 16px 32px; font-size: 1.1rem">
-          <span class="material-symbols-rounded">download</span>
-          <span data-i18n="cta.btn">Descargar Gigly Gratis</span>
+        <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary cta-primary-btn" style="padding: 16px 32px; font-size: 1.1rem">
+          <span class="material-symbols-rounded">android</span>
+          <span data-i18n="cta.btn">Descargar en Google Play</span>
         </a>
+        <div class="store-btn-wrapper">
+          <button type="button" class="btn btn-store btn-appstore" style="padding: 16px 32px; font-size: 1.1rem;" aria-label="App Store (Próximamente)">
+            <span class="material-symbols-rounded">download</span>
+            <span data-i18n="hero.btn.appstore">App Store</span>
+            <span class="badge-coming-soon" data-i18n="appstore.badge">Próximamente</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -357,7 +367,7 @@
           <a href="#showcase" data-i18n="footer.nav.showcase">App Showcase</a>
           <a href="#features" data-i18n="footer.nav.features">Características</a>
           <a href="planes/index.html" data-i18n="footer.nav.pricing">Planes & Precios</a>
-          <a href="#download" data-i18n="footer.nav.download">Descargar App</a>
+          <a href="https://play.google.com/store/apps/details?id=com.gigly.app" target="_blank" rel="noopener noreferrer" data-i18n="footer.nav.download">Descargar App</a>
         </div>
         <div class="link-group">
           <h4 data-i18n="footer.legal.title">Legal</h4>

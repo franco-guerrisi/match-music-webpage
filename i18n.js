@@ -22,6 +22,11 @@ const GIGLY_TRANSLATIONS = {
     'hero.btn.appstore': 'App Store',
     'hero.btn.playstore': 'Google Play',
     'hero.btn.plans': 'Ver Planes',
+    'appstore.badge': 'Próximamente',
+    'appstore.modal.title': 'App Store · Próximamente',
+    'appstore.modal.desc': 'Estamos terminando los últimos detalles de la versión para iOS (iPhone y iPad). ¡Muy pronto estará disponible en Apple App Store! Mientras tanto, ya puedes descargar Gigly para Android en Google Play.',
+    'appstore.modal.btn_playstore': 'Descargar en Google Play',
+    'appstore.modal.close': 'Entendido',
 
     // Mission Index
     'mission.title': 'Nuestra <span class="text-gradient">Misión</span>',
@@ -183,6 +188,11 @@ const GIGLY_TRANSLATIONS = {
     'hero.btn.appstore': 'App Store',
     'hero.btn.playstore': 'Google Play',
     'hero.btn.plans': 'View Plans',
+    'appstore.badge': 'Coming Soon',
+    'appstore.modal.title': 'App Store · Coming Soon',
+    'appstore.modal.desc': 'We are finalizing the iOS version for iPhone and iPad. It will be available very soon on the Apple App Store! In the meantime, you can download Gigly for Android on Google Play.',
+    'appstore.modal.btn_playstore': 'Get it on Google Play',
+    'appstore.modal.close': 'Got it',
 
     // Mission Index
     'mission.title': 'Our <span class="text-gradient">Mission</span>',
